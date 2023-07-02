@@ -31,8 +31,8 @@ const Companys = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-10">
-        {companys.map((company, i) => (
-          <SingleCompany key={i} company={company}></SingleCompany>
+        {companys.map((companyData, i) => (
+          <SingleCompany key={i} companyData={companyData}></SingleCompany>
         ))}
       </div>
 
