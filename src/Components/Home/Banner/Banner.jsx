@@ -3,8 +3,8 @@ import remotely from "../../../image/remote.png";
 
 const Banner = () => {
   return (
-    <div className="bg-[#0983C0] flex gap-10  w-full  pb-20">
-      <div className="">
+    <div className="bg-[#0983C0] flex gap-10  w-full  pb-20 ">
+      <div className="mt-20">
         <img src={remotely} alt="" />
       </div>
 
