@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import SingleCompany from "./SingleCompany";
+import { Link } from "react-router-dom";
 
 const Companys = () => {
   const {
@@ -37,12 +38,14 @@ const Companys = () => {
       </div>
 
       <div className="w-[270px] mx-auto">
+        <Link to='/sixcompany'>
         <button
           type="button"
           className="bg-[#006AC1] text-white font-semibold rounded-3xl mt-8 "
         >
           Browse More Companies
         </button>
+        </Link>
       </div>
     </div>
   );
