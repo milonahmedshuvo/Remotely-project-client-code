@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const SingleCompany = ({ companyData }) => {
   console.log(companyData);
-  const { companyName, profilePic, coverpic, sortAddress, indrustyType } =
+  const { companyName, profilePic, coverpic, sortAddress, indrustyType,_id } =
     companyData;
 
   return (
@@ -30,7 +31,8 @@ const SingleCompany = ({ companyData }) => {
 
         <div className="py-2 px-3 border border-[#D3D3D3] mb-4 rounded-3xl mx-auto w-1/2">
           <span className="mr-2 text-sm pr-2 border-r-2 hover:text-[#305393] hover:font-semibold">
-            Explore
+            <Link to={`/DainamicRoute/${_id}`}>Explore</Link>
+            
           </span>
           <span className="text-sm hover:text-[#305393] hover:font-semibold">
             Open Jobs
