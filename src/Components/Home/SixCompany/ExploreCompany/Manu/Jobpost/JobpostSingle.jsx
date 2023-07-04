@@ -1,10 +1,11 @@
 import React from 'react'
 import { FaBeer, FaStar,FaStarOfDavid,FaRegStar,FaAirbnb, FaStarHalfAlt, FaLowVision, FaEnvelopeOpen, FaTv, FaUniversity, FaPeopleArrows, FaRegHeart } from 'react-icons/fa'
+import { Link } from 'react-router-dom';
 
 
 const JobpostSingle = ({post}) => {
-    console.log(post)
-    const { jobTitle, location, jobtype, drescription } = post;
+    
+    const { jobTitle, location, jobtype, drescription, companyName, _id } = post;
 
 
 
@@ -12,7 +13,11 @@ const JobpostSingle = ({post}) => {
     <div className='bg-[#F4FCFF] px-3 py-6'>
 
          <div className='flex justify-between'>
-            <h2 className='text-[#007CD8] font-semibold text-lg'>{jobTitle}</h2>
+            <h2 className='text-[#007CD8] font-semibold text-lg'>
+              
+              
+              <Link to={`/DainamicRoute/${_id}/${companyName}/${_id}`}>{jobTitle}</Link>
+              </h2>
             <FaRegStar className='text-[#46AC49] text-[30px]'></FaRegStar>
          </div>
 

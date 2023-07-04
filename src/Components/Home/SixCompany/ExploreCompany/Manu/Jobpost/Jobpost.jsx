@@ -1,5 +1,5 @@
 import React from 'react'
-import { useLoaderData } from 'react-router-dom'
+import { Outlet, useLoaderData } from 'react-router-dom'
 import JobpostSingle from './JobpostSingle'
 
 const Jobpost = () => {
@@ -30,6 +30,8 @@ const Jobpost = () => {
 
          <div className='border border-red-400 '>
             <h1>Datails post </h1>
+
+            <Outlet></Outlet>
          </div>
 
 
