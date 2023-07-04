@@ -4,6 +4,7 @@ import Home from "./Components/Home/Home/Home";
 import SixCompany from "./Components/Home/SixCompany/SixCompany";
 import ExploreCompany from "./Components/Home/SixCompany/ExploreCompany/ExploreCompany";
 import Overview from "./Components/Home/SixCompany/ExploreCompany/Manu/Overview/Overview";
+import Jobpost from "./Components/Home/SixCompany/ExploreCompany/Manu/Jobpost/Jobpost";
 
 export const router = createBrowserRouter([
     {
@@ -31,6 +32,13 @@ export const router = createBrowserRouter([
                  loader: async ({params }) => {
                   return fetch(`http://localhost:5000/singleCompanydatails/${params.id}`)
                 },
+             },
+             {
+                 path:"/DainamicRoute/:id/:companyName",
+                 element: <Jobpost> </Jobpost>,
+                 loader: async ({params}) => {
+                  return fetch(`http://localhost:5000/job/${params.companyName}`)
+                 }
              }
           ]
         }

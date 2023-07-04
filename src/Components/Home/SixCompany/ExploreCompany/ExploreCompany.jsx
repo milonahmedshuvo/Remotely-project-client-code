@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, Outlet, useLoaderData } from 'react-router-dom'
-import { FaBeer, FaStar, FaStarHalfAlt, FaLowVision, FaEnvelopeOpen, FaTv, FaUniversity, FaPeopleArrows, FaRegHeart } from 'react-icons/fa'
+import { FaBeer, FaStar, FaStarHalfAlt, FaLowVision, FaEnvelopeOpen, FaTv, FaUniversity, FaPeopleArrows, FaRegHeart, FaUsers } from 'react-icons/fa'
 
 
 
@@ -104,12 +104,15 @@ const ExploreCompany = () => {
 
                          <div className='flex flex-col items-center justify-center'>
                           <h3> <FaUniversity></FaUniversity></h3>
-                          <p className='font-semibold mt-2'>Jobs</p>
+                          <p className='font-semibold mt-2'>
+                          
+                          <Link className='text-[#213547]' to={`/DainamicRoute/${_id}/${companyName}`}>Jobs</Link>
+                          </p>
                          </div>
 
 
                          <div className='flex flex-col items-center justify-center'>
-                          <h3><FaPeopleArrows></FaPeopleArrows></h3>
+                          <h3><FaUsers></FaUsers></h3>
                           <p className='font-semibold mt-2'>people</p>
                          </div>
 
