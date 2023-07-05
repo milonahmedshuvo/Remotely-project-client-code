@@ -2,7 +2,7 @@ import React from "react";
 
 const Eportfolio = () => {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-2 gap-10 my-20">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 my-20">
       <div className=" ">
         <img
           src="https://www.gradsiren.com/assets/img/portfolio_image.png"
