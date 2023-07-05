@@ -10,26 +10,36 @@ const JobpostSingle = ({post}) => {
 
 
   return (
-    <div className='bg-[#F4FCFF] px-3 py-6'>
+    <div className='bg-[#F4FCFF] px-3 pt-6 pb-10 my-2'>
 
          <div className='flex justify-between'>
             <h2 className='text-[#007CD8] font-semibold text-lg'>
               
+              {jobTitle}
               
-              <Link to={`/DainamicRoute/${_id}/${companyName}/${_id}`}>{jobTitle}</Link>
               </h2>
             <FaRegStar className='text-[#46AC49] text-[30px]'></FaRegStar>
          </div>
 
         
-        <div className='flex items-center mb-4'>
-            <FaAirbnb className='text-lg mr-2 '></FaAirbnb>
-            <p className='text-[#007CD8] font-medium'>{location}</p>
+        <div className='flex items-center '>
+            <FaAirbnb className='text-lg mr-[2px] '></FaAirbnb>
+            <p className=''>{location}</p>
         </div>
+          <div className='mb-4  flex items-center '>
+               <FaUniversity className='mr-[2px]'></FaUniversity>
+              <p>{jobtype}</p>
+           </div>
+
          <p className='text-sm mb-1 '>{drescription}...</p> 
 
-         <div className='bg-[#F2F2F3] py-3 text-sm pl-3'>
-            <p>{jobtype}</p>
+         
+
+         <div className=' flex justify-end mt-2'>
+         <p className="btn btn-sm bg-[#46AC49] hover:bg-[#46AC49] hover:text-white text-white btn-outline border-none">
+          
+         <Link to={`/companyJob/${_id}`} className='text-white hover:text-white'>View Post</Link>
+          </p>
          </div>
     </div>
   )

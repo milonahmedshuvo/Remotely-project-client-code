@@ -20,6 +20,13 @@ export const router = createBrowserRouter([
           path: "/sixcompany",
           element: <SixCompany></SixCompany>
         },
+          {
+            path:"/companyJob/:id",
+            element: <OnepostDatails></OnepostDatails>,
+            loader: async ({params}) => {
+            return fetch(`http://localhost:5000/jobSingle/${params.id}`)  
+            }
+          },
         {
           path: "/DainamicRoute/:id",
           element: <ExploreCompany></ExploreCompany>,
@@ -39,17 +46,22 @@ export const router = createBrowserRouter([
                  element: <Jobpost> </Jobpost>,
                  loader: async ({params}) => {
                   return fetch(`http://localhost:5000/job/${params.companyName}`)
-                 },
-                 children: [
-                     {
-                        path:"/DainamicRoute/:id/:companyName/:postId",
-                        element: <OnepostDatails></OnepostDatails>,
-                        loader: async ({params}) => {
-                           return fetch(`http://localhost:5000/jobSingle/${params.postId}`)  
-                        }
-                     }
-                 ]
-             }
+                 }
+                //  children: [
+                //      {
+                //         path:"/DainamicRoute/:id/:companyName/:postId",
+                //         element: <OnepostDatails></OnepostDatails>,
+                //         loader: async ({params}) => {
+                //            return fetch(`http://localhost:5000/jobSingle/${params.id}`)  
+                //         }
+                //      }
+                //  ]
+             },
+             
+              
+          
+
+
           ]
         }
         
