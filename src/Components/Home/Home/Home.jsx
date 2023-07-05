@@ -4,6 +4,7 @@ import Companys from '../Companys/Companys'
 import HomeWork from '../../HomeWork/HomeWork'
 import Eportfolio from '../Eportfolio/Eportfolio'
 import WhyRemotely from '../WhyRemotely/WhyRemotely'
+import Employers from '../Employers/Employers'
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
        <HomeWork></HomeWork>
        <Eportfolio></Eportfolio>
        <WhyRemotely></WhyRemotely>
+       <Employers></Employers>
     </div>
   )
 }

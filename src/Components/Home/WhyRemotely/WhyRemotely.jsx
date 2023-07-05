@@ -14,8 +14,8 @@ import {
 
 const WhyRemotely = () => {
   return (
-    <div className="my-24">
-      <h1 className="text-3xl font-bold text-center">Why Remotely</h1>
+    <div className="my-24 lg:px-20">
+      <h1 className="text-3xl font-bold text-center">Why Remotely?</h1>
 
       <div className="grid lg:grid-cols-4 grid-cols-2 md:grid-cols-3 gap-2 md:gap-10 my-16">
         <div className="py-6 px-8">
