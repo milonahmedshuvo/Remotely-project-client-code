@@ -1,5 +1,17 @@
 import React from "react";
 import remotely from "../../../image/remote.png";
+import {
+  FaBeer,
+  FaFileSignature,
+  FaUserAlt,
+  FaWarehouse,
+  FaArtstation,
+  FaMendeley,
+  FaUsers,
+  FaChartArea,
+  FaImage,
+  FaMapMarkerAlt
+} from "react-icons/fa";
 
 const Banner = () => {
   return (
@@ -24,7 +36,10 @@ const Banner = () => {
             <label htmlFor="" className="mx-4">Advice</label>
             </h3>
         <input type="text" placeholder="Keyword, Title" className="input input-bordered input-success " />
+
+        
         <input type="text" placeholder="Locations" className="input input-bordered input-success ml-3" />
+
         <input type="button" value="Find Jobs" className="bg-[#0C8D2C] text-white py-3 px-3 rounded ml-3" />
         </div>
        </div>

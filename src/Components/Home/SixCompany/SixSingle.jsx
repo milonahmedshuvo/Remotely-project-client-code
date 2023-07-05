@@ -36,7 +36,9 @@ const SixSingle = ({ companyData }) => {
           </span>
           </Link>
           <span className="text-sm hover:text-[#305393] hover:font-semibold">
-            Open Jobs
+           
+          Open Jobs
+
           </span>
         </div>
       </div>
