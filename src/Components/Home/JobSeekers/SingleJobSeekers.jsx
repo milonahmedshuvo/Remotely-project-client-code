@@ -1,6 +1,6 @@
 import React from "react";
 
-const SingleEmployers = ({ employer }) => {
+const SingleJobSeekers = ({ employer }) => {
   const { title, dres, image } = employer;
 
   return (
@@ -19,4 +19,4 @@ const SingleEmployers = ({ employer }) => {
   );
 };
 
-export default SingleEmployers;
+export default SingleJobSeekers;
