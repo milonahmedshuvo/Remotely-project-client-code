@@ -19,19 +19,19 @@ const Companys = () => {
 
   console.log(companys);
   return (
-    <div className="my-32 px-32">
+    <div className="my-10 md:my-24 lg:my-32  lg:px-32 md:px-10">
       <div>
         <h1 className="text-[#414B5D] font-bold text-center text-3xl my-3">
           Research Companies
         </h1>
         <hr className="bg-[#128ADC] w-28 mb-5 h-1 mx-auto" />
-        <p className="text-[#414B5D] font-medium text-center">
+        <p className="text-[#414B5D] font-medium text-center mx-10 md:mx-0">
           Explore a wide range of placement opportunities from across the
           country that align with your career goals and aspirations.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-5 md:mx-0 gap-5 lg:gap-10">
         {companys.map((companyData, i) => (
           <SingleCompany key={i} companyData={companyData}></SingleCompany>
         ))}
