@@ -6,6 +6,7 @@ import Eportfolio from '../Eportfolio/Eportfolio'
 import WhyRemotely from '../WhyRemotely/WhyRemotely'
 import Employers from '../Employers/Employers'
 import JobSeekers from '../JobSeekers/JobSeekers'
+import ProfessionalSkills from '../ProfessionalSkills/ProfessionalSkills'
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
        <WhyRemotely></WhyRemotely>
        <Employers></Employers>
        <JobSeekers></JobSeekers>
+       <ProfessionalSkills></ProfessionalSkills>
     </div>
   )
 }
