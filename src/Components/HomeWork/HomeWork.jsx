@@ -30,9 +30,9 @@ const HomeWork = () => {
   ];
 
   return (
-    <div>
+    <div className="mt-10 md:mt-40 mb-28">
       <div>
-        <h1 className="text-[#414B5D] font-bold text-center text-3xl mb-3 mt-10 md:mt-40">
+        <h1 className="text-[#414B5D] font-bold text-center text-3xl mb-3 ">
           How GradSiren Works For You
         </h1>
         <hr className="bg-[#128ADC] w-28 mb-5 h-1 mx-auto" />
