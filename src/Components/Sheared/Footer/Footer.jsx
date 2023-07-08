@@ -23,26 +23,35 @@ const Footer = () => {
           </p>
         </div>
         <div className="text-white">
-          <span className="footer-title ">Services</span>
-          <a className="link link-hover text-white">Branding</a>
-          <a className="link link-hover text-white">Design</a>
-          <a className="link link-hover text-white">Marketing</a>
-          <a className="link link-hover text-white">Advertisement</a>
+          <span className="footer-title ">About Remotely</span>
+          <a className="link link-hover text-white"> About Us</a>
+          <a className="link link-hover text-white">Contact Us</a>
+          <a className="link link-hover text-white">Guidelines</a>
+          <a className="link link-hover text-white">Privacy Policy</a>
+          <a className="link link-hover text-white">Cookie Policy</a>
+          <a className="link link-hover text-white">Terms & Conditions</a>
+          <a className="link link-hover text-white">Sitemap</a>
         </div>
         <div>
-          <span className="footer-title">Company</span>
-          <a className="link link-hover text-white">About us</a>
-          <a className="link link-hover text-white">Contact</a>
-          <a className="link link-hover text-white">Jobs</a>
-          <a className="link link-hover text-white">Press kit</a>
+          <span className="footer-title">For Jobseekers</span>
+          <a className="link link-hover text-white">Browse Companies</a>
+          <a className="link link-hover text-white">Explore Internships</a>
+          <a className="link link-hover text-white">Upload Resume</a>
+          <a className="link link-hover text-white">Give Company Review</a>
         </div>
         <div>
-          <span className="footer-title text-white">Legal</span>
-          <a className="link link-hover text-white">Terms of use</a>
-          <a className="link link-hover text-white">Privacy policy</a>
-          <a className="link link-hover text-white">Cookie policy</a>
+          <span className="footer-title text-white">For Employers</span>
+          <a className="link link-hover text-white">Post a Job for free</a>
+          <a className="link link-hover text-white">Hire Talent</a>
+          <a className="link link-hover text-white">Login</a>
+          <a className="link link-hover text-white">Sign Up</a>
         </div>
+
+
+        
       </footer>
+
+      
     </div>
   );
 };
