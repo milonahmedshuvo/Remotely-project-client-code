@@ -6,12 +6,12 @@ const Navber1 = () => {
     const manuItem = <>
 
     
-    <li> <Link to="/">Home</Link> </li>
-    <li> <Link to="/">Home</Link> </li>
-    <li> <Link to="/">Home</Link> </li>
-    <li> <Link to="/">Home</Link> </li>
-    <li> <Link to="/">Home</Link> </li>
-    <li> <Link to="/">Home</Link> </li>
+    <li> <Link to="/" className='text-lg'>Home</Link> </li>
+    <li> <Link to="/" className='text-lg'>Find Jobs</Link> </li>
+    <li> <Link to="/sixcompany" className='text-lg'>Browse Companies</Link> </li>
+    <li> <Link to="/" className='text-lg'>Career Advice</Link> </li>
+    <li> <Link to="/" className='text-lg'>Help Center</Link> </li>
+    
     
     
    
