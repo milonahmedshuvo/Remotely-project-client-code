@@ -8,6 +8,7 @@ import Employers from '../Employers/Employers'
 import JobSeekers from '../JobSeekers/JobSeekers'
 import ProfessionalSkills from '../ProfessionalSkills/ProfessionalSkills'
 import Organizations from '../Organizations/Organizations'
+import YourIdea from '../YourIdea/YourIdea'
 
 const Home = () => {
   return (
@@ -21,6 +22,7 @@ const Home = () => {
        <JobSeekers></JobSeekers>
        <ProfessionalSkills></ProfessionalSkills>
        <Organizations></Organizations>
+       <YourIdea></YourIdea>
     </div>
   )
 }
