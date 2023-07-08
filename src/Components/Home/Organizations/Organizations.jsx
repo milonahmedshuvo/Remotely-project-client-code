@@ -43,6 +43,7 @@ const Organizations = () => {
         </div>
       </div>
 
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-20 mt-28 gap-6 ">
         <div className="border-2 rounded-xl bg-[#FFFFFF] p-5 border-[#FCD99E]">
           <h1>
