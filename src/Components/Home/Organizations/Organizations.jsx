@@ -20,22 +20,22 @@ const Organizations = () => {
         </div>
 
         <div>
-          <h2 className="text-xl mb-4 font-bold text-[#AAABAF]">
+          <h2 className="text-lg md:text-xl mb-4 font-bold text-[#AAABAF] text-center md:text-start mt-20 md:mt-0">
             More for Nonprofit Organizations
           </h2>
-          <h1 className="text-3xl font-bold mb-4">
+          <h1 className=" md:text-3xl text-2xl font-bold mb-4 text-center md:text-start">
             Get Volunteers for Your Projects
           </h1>
-          <p className="">
+          <p className="text-center md:text-start">
             Create a page for your nonprofit organization to recruit volunteers
             from all around the world. Post your volunteering opportunities on
             RemoteHub, and find professionals who share your values.
           </p>
 
-          <div className="w-full">
+          <div className="w-full flex justify-center md:justify-start">
             <button
               type="button"
-              className="bg-[#2383D3] font-semibold text-white rounded-full mt-14"
+              className="bg-[#2383D3] font-semibold text-white rounded-full mt-14 "
             >
               Post valunter Projects
             </button>
@@ -43,7 +43,7 @@ const Organizations = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-20 mt-28 gap-6 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-2 md:px-10 lg:px-20 mt-28 gap-6 ">
         <div className="border-2 rounded-xl bg-[#FFFFFF] p-5 border-[#FCD99E]">
           <h1>
             {" "}
@@ -99,14 +99,14 @@ const Organizations = () => {
             {" "}
             <FaShare className="text-[#FFA000] text-xl mb-4"></FaShare>
           </h1>
-          <p className="text-[#9499A6] mb-4 ">
+          <p className="text-[#9499A6] mb-4  ">
             RWe use Remotely to reach out to the thousands of remote
             professionals. Thanks to the rich set of tools, the entire
             recruiting and work process can be done in one place which is very
             convenient.
           </p>
 
-          <div className="flex items-center ">
+          <div className="flex items-center border-t-2 pt-2 ">
             <h1>
               <FaForumbee className="text-lg text-[#0CA7A5]"></FaForumbee>
             </h1>
