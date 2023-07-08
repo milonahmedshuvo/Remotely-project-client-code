@@ -3,7 +3,7 @@ import { FaBeer, FaLongArrowAltRight } from "react-icons/fa";
 
 const YourIdea = () => {
   return (
-    <div className="mt-20">
+    <div className="mt-20 mb-20">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-16 px-7  md:px-10 lg:px-20">
         <div>
           <h1 className="text-2xl font-bold text-[#ACB0BA]">
