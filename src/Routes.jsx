@@ -6,6 +6,9 @@ import ExploreCompany from "./Components/Home/SixCompany/ExploreCompany/ExploreC
 import Overview from "./Components/Home/SixCompany/ExploreCompany/Manu/Overview/Overview";
 import Jobpost from "./Components/Home/SixCompany/ExploreCompany/Manu/Jobpost/Jobpost";
 import OnepostDatails from "./Components/Home/SixCompany/ExploreCompany/Manu/Jobpost/OnepostDatails";
+import HowCanhelp from "./Components/HomeOutComponents/HowCanhelp/HowCanhelp";
+import Login from "./Components/HomeOutComponents/User/Login/Login";
+import Register from "./Components/HomeOutComponents/User/Register/Register";
 
 export const router = createBrowserRouter([
     {
@@ -20,6 +23,18 @@ export const router = createBrowserRouter([
           path: "/sixcompany",
           element: <SixCompany></SixCompany>
         },
+        {
+           path: "/howcanhelp",
+           element: <HowCanhelp> </HowCanhelp>
+        },
+         {
+            path: '/login',
+            element: <Login> </Login>
+         },
+         {
+            path: '/register',
+            element: <Register></Register>
+         },
           {
             path:"/companyJob/:id",
             element: <OnepostDatails></OnepostDatails>,

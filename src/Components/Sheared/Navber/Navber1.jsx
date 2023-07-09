@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 const Navber1 = () => {
 
@@ -10,7 +10,7 @@ const Navber1 = () => {
     <li> <Link to="/" className='text-lg'>Find Jobs</Link> </li>
     <li> <Link to="/sixcompany" className='text-lg'>Browse Companies</Link> </li>
     <li> <Link to="/" className='text-lg'>Career Advice</Link> </li>
-    <li> <Link to="/" className='text-lg'>Help Center</Link> </li>
+    <li> <Link to="/howcanhelp" className='text-lg'>Help Center</Link> </li>
     
     
     
@@ -41,7 +41,10 @@ const Navber1 = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Button</a>
+    {/* <a className="btn">Button</a> */}
+
+    <Link to='/register'>Register</Link>
+    <Link to="/login">Login</Link>
   </div>
 </div>
   )

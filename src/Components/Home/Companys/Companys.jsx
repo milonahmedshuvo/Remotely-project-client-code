@@ -17,7 +17,7 @@ const Companys = () => {
     },
   });
 
-  console.log(companys);
+  
   return (
     <div className="my-10 md:my-24 lg:my-32  lg:px-32 md:px-10">
       <div>

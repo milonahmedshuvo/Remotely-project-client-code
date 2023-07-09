@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const SingleCompany = ({ companyData }) => {
-  console.log(companyData);
+  
   const { companyName, profilePic, coverpic, sortAddress, indrustyType,_id } =
     companyData;
 
