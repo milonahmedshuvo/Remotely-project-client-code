@@ -36,6 +36,7 @@ const Register = () => {
               className="input   border-[#A3E2BF] w-full "
               {...register("email", {required: true})}
             />
+            <p className="text-red-400">{errors.email?.message}</p>
           </div>
 
 
@@ -51,6 +52,7 @@ const Register = () => {
               className="input  border-[#A3E2BF] w-full "
               {...register("password", {required:"provide your password"})}
             />
+            <p className="text-red-300">{errors.password?.message}</p>
           </div>
 
 
