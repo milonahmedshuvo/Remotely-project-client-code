@@ -1,18 +1,36 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
+import toast, { Toaster } from 'react-hot-toast';
+import { createContextUser } from "../../../Sheared/Context/FullAppContext";
+
+
+
+
+
 
 const Register = () => {
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
+      const {newUserCreate}= useContext(createContextUser)
+      const {
+        register,
+        handleSubmit,
+        watch,
+        formState: { errors },
+                 } = useForm();
 
   const handleOnSubmit = (data) => {
+    console.log(data.name)
     console.log(data.email)
     console.log(data.password)
     console.log(data.select)
+     newUserCreate(data.email, data.password)
+    .then((res) => {
+      console.log(res.user)
+      toast.success("Succesful user create..!")
+    })
+    .catch((error) => {
+      console.log(error)
+      toast.error("Field to user create...!")
+    })
   };
 
 
@@ -20,12 +38,34 @@ const Register = () => {
 
   return (
     <div className="mt-16 mb-28  ">
-      <h1 className="text-center font-bold text-[#0C8D2C] text-2xl">
+      
+      <div className="w-2/6 mx-auto shadow-lg px-8 py-8 bg-[#EAEAEA]">
+
+      <h1 className="text-center font-bold text-[#0983C0] text-2xl">
         Register Form
       </h1>
 
-      <div className="flex justify-center">
-        <form onSubmit={handleSubmit(handleOnSubmit)} className="w-2/6">
+
+        <form onSubmit={handleSubmit(handleOnSubmit)} className="">
+
+        <div className="form-control w-full my-3  ">
+            <label className="label">
+              <span className="label-text">Name</span>
+            </label>
+            <input
+              type="text"
+              placeholder="name"
+              className="input   border-[#B2B2B2] w-full "
+              {...register("name", {required: "Your valid name provite"})}
+            />
+            <p className="text-red-400">{errors.name?.message}</p>
+          </div>
+
+
+
+
+
+
           <div className="form-control w-full my-3  ">
             <label className="label">
               <span className="label-text">Email</span>
@@ -33,8 +73,8 @@ const Register = () => {
             <input
               type="email"
               placeholder="Email"
-              className="input   border-[#A3E2BF] w-full "
-              {...register("email", {required: true})}
+              className="input   border-[#B2B2B2] w-full "
+              {...register("email", {required: "Your email provite"})}
             />
             <p className="text-red-400">{errors.email?.message}</p>
           </div>
@@ -49,7 +89,7 @@ const Register = () => {
             <input
               type="password"
               placeholder="Password"
-              className="input  border-[#A3E2BF] w-full "
+              className="input  border-[#B2B2B2] w-full "
               {...register("password", {required:"provide your password"})}
             />
             <p className="text-red-300">{errors.password?.message}</p>
@@ -58,12 +98,12 @@ const Register = () => {
 
 
 
-          <select className="select border-[#A3E2BF] w-full my-3 " {...register("select", {required: true})}>
+          <select className="select border-[#B2B2B2] w-full my-3 " {...register("select", {required: true})}>
             <option selected>Job Seeker</option>
             <option>Employer</option>
           </select>
 
-
+          <p className="text-red-300">{errors.select?.message}</p>
 
 
 
@@ -71,7 +111,7 @@ const Register = () => {
             <input
               type="submit"
               value="Submit"
-              className="bg-[#0C8D2C] w-full py-2 mt-7 rounded text-white font-bold"
+              className="bg-[#014C74] w-full py-2 mt-7 rounded text-white font-bold"
             />
           </div>
         </form>

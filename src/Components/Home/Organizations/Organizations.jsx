@@ -35,7 +35,7 @@ const Organizations = () => {
           <div className="w-full flex justify-center md:justify-start">
             <button
               type="button"
-              className="bg-[#2383D3] font-semibold text-white rounded-full mt-14 "
+              className="bg-[#2383D3] font-semibold text-white rounded-full mt-14 py-2 px-4"
             >
               Post valunter Projects
             </button>

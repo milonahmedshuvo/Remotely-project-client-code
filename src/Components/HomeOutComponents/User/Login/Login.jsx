@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import { createContextUser } from "../../../Sheared/Context/FullAppContext";
 import { useForm } from "react-hook-form";
+import { toast } from "react-hot-toast";
 
 const Login = () => {
-  const { user } = useContext(createContextUser);
+  const { user, userSingIn } = useContext(createContextUser);
   const {
     register,
     handleSubmit,
@@ -15,6 +16,15 @@ const Login = () => {
            const handleLoginForm = (data) => {
             console.log(data.email)
             console.log(data.password)
+            userSingIn(data.email, data.password)
+            .then((res) => {
+              console.log(res)
+              toast.success("Succesful user login..!!")
+            })
+            .catch((err)=>{
+              console.log(err)
+              toast.error("Filed user login..!!")
+            })
            }
 
   return (
