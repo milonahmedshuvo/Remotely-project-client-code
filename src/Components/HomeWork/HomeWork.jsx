@@ -33,11 +33,11 @@ const HomeWork = () => {
     <div className="mt-10 md:mt-40 mb-28">
       <div>
         <h1 className="text-[#414B5D] font-bold text-center text-3xl mb-3 ">
-          How GradSiren Works For You
+          How Remotely Works For You
         </h1>
         <hr className="bg-[#128ADC] w-28 mb-5 h-1 mx-auto" />
-        <p className="text-[#414B5D] font-medium text-center">
-          GradSiren’s top-of-the-line search program has been built specifically
+        <p className="text-[#414B5D] font-medium text-center w-full lg:w-4/6 mx-auto">
+          Remotely’s top-of-the-line search program has been built specifically
           to help College students search for and land the best fresher jobs and
           internships from MNCs and Startups around the world.
         </p>
