@@ -1,20 +1,32 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import { createContextUser } from '../Context/FullAppContext'
+import { toast } from 'react-hot-toast'
 
 const Navber1 = () => {
+      const {userSingOut}= useContext(createContextUser)
+
+      const handleSingOut =()=> {
+         userSingOut()
+         .then((res)=>{
+          toast.success("succesful user SingOut..!!")
+         })
+         .catch((err)=> {
+          console.log(err)
+          toast.error("Filed user SingOut..!!")
+         })
+      }
+
+
+
 
     const manuItem = <>
-
-    
-     <Link to="/" className='text-md font-medium uppercase ml-5 text-[#0983C0] '>Home</Link> 
-     <Link to="/" className='text-md font-medium uppercase ml-5 text-[#0983C0]'>Find Jobs</Link> 
-     <Link to="/sixcompany" className='text-md font-medium uppercase ml-5 text-[#0983C0]'>Browse Companies</Link> 
-     <Link to="/" className='text-md font-medium uppercase ml-5 text-[#0983C0]'>Career Advice</Link> 
-     <Link to="/howcanhelp" className='text-md font-medium uppercase ml-5 text-[#0983C0]'>Help Center</Link>
-    
-    
-    
-   
+     <Link to="/" className='text-lg font-medium uppercase ml-5 text-[#0983C0] '>Home</Link> 
+     <Link to="/" className='text-lg font-medium uppercase ml-5 text-[#0983C0]'>Find Jobs</Link> 
+     <Link to="/sixcompany" className='text-lg font-medium uppercase ml-5 text-[#0983C0]'>Browse Companies</Link> 
+     <Link to="/" className='text-lg font-medium uppercase ml-5 text-[#0983C0]'>Career Advice</Link> 
+     <Link to="/howcanhelp" className='text-lg font-medium uppercase ml-5 text-[#0983C0]'>Help Center</Link>
+       
 </>
 
 
@@ -44,7 +56,8 @@ const Navber1 = () => {
     {/* <a className="btn">Button</a> */}
 
     <Link to='/register' className='uppercase text-[#0983C0]  mr-3'>Register</Link>
-    <Link to="/login" className='uppercase text-[#0983C0] text'>Login</Link>
+    <Link to="/login" className='uppercase text-[#0983C0] mr-3 text'>Login</Link>
+    <Link to="/" onClick={handleSingOut} className='uppercase text-[#0983C0] text'>SingOut</Link>
   </div>
 </div>
   )
