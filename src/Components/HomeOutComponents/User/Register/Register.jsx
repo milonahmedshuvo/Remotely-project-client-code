@@ -22,15 +22,20 @@ const Register = () => {
     console.log(data.email)
     console.log(data.password)
     console.log(data.select)
-     newUserCreate(data.email, data.password)
-    .then((res) => {
-      console.log(res.user)
-      toast.success("Succesful user create..!")
-    })
-    .catch((error) => {
-      console.log(error)
-      toast.error("Field to user create...!")
-    })
+    console.log(data.img)  
+
+    //  newUserCreate(data.email, data.password)
+    // .then((res) => {
+    //   console.log(res.user)
+    //   toast.success("Succesful user create..!")
+    // })
+    // .catch((error) => {
+    //   console.log(error)
+    //   toast.error("Field to user create...!")
+    // })
+
+
+
   };
 
 
@@ -41,9 +46,9 @@ const Register = () => {
                function dateFormate (obj){
                 const year = obj.getFullYear()
                 const month= obj.getMonth()
-                const day = obj.getDay()
+                const day = obj.getDate()
 
-                return `year: ${year}: month ${month}: day: ${day}`
+                return `year: ${year}: month ${month +1 }: day: ${day}`
                }
 
            
@@ -149,24 +154,6 @@ const Register = () => {
           </div>
 
 
-         
-          
-
-
-
-          <div className="form-control w-full my-3  ">
-            <label className="label">
-              <span className="label-text">Your Photo</span>
-            </label>
-            <input
-              type="text"
-              placeholder="Your Photo"
-              className="input   border-[#B2B2B2] w-full "
-              {...register("photo", {required: "Your valid photo"})}
-            />
-            <p className="text-red-400">{errors.photo?.message}</p>
-          </div>
-
 
 
           <select className="select border-[#B2B2B2] w-full my-3 " {...register("select", {required: true})}>
@@ -175,6 +162,32 @@ const Register = () => {
           </select>
 
           <p className="text-red-300">{errors.select?.message}</p>
+
+
+
+
+
+
+          <div className="form-control w-full my-3  ">
+            <label className="label">
+              <span className="label-text">Your Photo</span>
+            </label>
+            <input
+              type="file"
+              placeholder="Your Photo"
+              className="input   border-[#B2B2B2] w-full "
+              {...register("img", {required: "Your valid photo"})}
+            />
+            <p className="text-red-400">{errors.img?.message}</p>
+          </div>
+
+
+
+
+
+
+
+
 
 
 
