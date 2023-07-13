@@ -10,6 +10,9 @@ import { createContextUser } from "../../../Sheared/Context/FullAppContext";
 
 const Register = () => {
       const {newUserCreate}= useContext(createContextUser)
+      
+    
+
       const {
         register,
         handleSubmit,
