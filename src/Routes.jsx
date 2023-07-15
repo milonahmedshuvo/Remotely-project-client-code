@@ -9,6 +9,7 @@ import OnepostDatails from "./Components/Home/SixCompany/ExploreCompany/Manu/Job
 import HowCanhelp from "./Components/HomeOutComponents/HowCanhelp/HowCanhelp";
 import Login from "./Components/HomeOutComponents/User/Login/Login";
 import Register from "./Components/HomeOutComponents/User/Register/Register";
+import JobSeekerLayout from "./Components/HomeOutComponents/JobSeeker/JobSeekerLayout/JobSeekerLayout";
 
 export const router = createBrowserRouter([
     {
@@ -61,25 +62,18 @@ export const router = createBrowserRouter([
                  element: <Jobpost> </Jobpost>,
                  loader: async ({params}) => {
                   return fetch(`http://localhost:5000/job/${params.companyName}`)
-                 }
-                //  children: [
-                //      {
-                //         path:"/DainamicRoute/:id/:companyName/:postId",
-                //         element: <OnepostDatails></OnepostDatails>,
-                //         loader: async ({params}) => {
-                //            return fetch(`http://localhost:5000/jobSingle/${params.id}`)  
-                //         }
-                //      }
-                //  ]
+                 }                
              },
              
               
-          
-
-
           ]
         }
         
       ]  
+    },
+    // job seeker layout and start components 
+    {
+        path: "/jobSeeker",
+        element: <JobSeekerLayout></JobSeekerLayout> 
     }
 ])
