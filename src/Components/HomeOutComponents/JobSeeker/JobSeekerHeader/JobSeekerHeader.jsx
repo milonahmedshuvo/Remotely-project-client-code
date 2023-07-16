@@ -86,7 +86,7 @@ const JobSeekerHeader = () => {
 
           <div className='flex flex-col items-center px-4 lg:px-7  border-white border-r-2 '>
                <img
-                className='rounded-full  lg:h-10 lg:w-10 ' 
+                className='rounded-full  h-10 w-10 ' 
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ43wDN0j33I98NSoGA_Hm_jgIt1nYVyDWlYw&usqp=CAU" alt="" />
 
                <p className='text-white '>Me</p>
