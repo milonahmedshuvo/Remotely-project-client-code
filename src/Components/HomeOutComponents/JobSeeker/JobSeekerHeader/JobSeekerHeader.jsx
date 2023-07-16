@@ -12,7 +12,7 @@ const JobSeekerHeader = () => {
 
 
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-[#1D4354]">
     <div className="navbar-start">
       <div className="dropdown">
         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -23,7 +23,7 @@ const JobSeekerHeader = () => {
         {/* { manuItem} */}
         </ul>
       </div>
-      <a className="btn btn-ghost normal-case text-xl">Remotely</a>
+      <a className="btn btn-ghost normal-case text-white text-xl">Remotely</a>
     </div>
     <div className="navbar-center hidden lg:flex">
       <ul className="menu menu-horizontal px-1">
@@ -33,39 +33,43 @@ const JobSeekerHeader = () => {
       
       </ul>
     </div>
-    <div className="navbar-end  mr-2 md:mr-5 lg:mr-32 ">
+    <div className="navbar-end  mr-2 md:mr-5 lg:mr-24  ">
     
 
 
-       <div className='flex items-center '>
+       <div className='flex items-center flex-col md:flex-row'>
 
 
-          <div className='flex flex-col items-center'>
-              <p><FaHome></FaHome> </p>
-              <p>Home</p>
+          
+
+          <Link to='/' className=''>
+          <div className='flex flex-col items-center mr-3 utilitis'>
+              <p className='text-white text-xl '><FaHome></FaHome> </p>
+              <p className='text-white  '>Home</p>
           </div>
+          </Link>
 
-          <div className='flex flex-col items-center'>
-              <p><FaUserFriends></FaUserFriends> </p>
-              <p>My Network</p>
-          </div>
-
-
-          <div className='flex flex-col items-center'>
-              <p><FaUserFriends></FaUserFriends> </p>
-              <p>ePortfolio</p>
-          </div>
-
-
-          <div className='flex flex-col items-center'>
-              <p><FaUserFriends></FaUserFriends> </p>
-              <p>Messaging</p>
+          <div className='flex flex-col items-center  mr-3'>
+              <p className='text-white text-xl'><FaUserFriends></FaUserFriends> </p>
+              <p className='text-white '>Network</p>
           </div>
 
 
-          <div className='flex flex-col items-center'>
-              <p><FaBell></FaBell> </p>
-              <p>Notifications</p>
+          <div className='flex flex-col items-center  mr-3'>
+              <p className='text-white text-xl'><FaMoneyCheck></FaMoneyCheck> </p>
+              <p className='text-white '>ePortfolio</p>
+          </div>
+
+
+          <div className='flex flex-col items-center  mr-3'>
+              <p className='text-white text-xl'><FaIdCard></FaIdCard> </p>
+              <p className='text-white '>Messaging</p>
+          </div>
+
+
+          <div className='flex flex-col items-center  mr-3'>
+              <p className='text-white text-xl'><FaBell></FaBell> </p>
+              <p className='text-white '>Notifications</p>
           </div>
 
 
@@ -78,20 +82,20 @@ const JobSeekerHeader = () => {
       
       {/* Me and Work  */}
 
-      <div  className='border border-red-500  flex justify-between items-center'>
+      <div  className='flex justify-between items-center'>
 
-          <div className='flex flex-col items-center px-4 lg:px-7  border-green-500 border-r-2 '>
+          <div className='flex flex-col items-center px-4 lg:px-7  border-white border-r-2 '>
                <img
-                className='rounded-full h-10 w-10 ' 
+                className='rounded-full  lg:h-10 lg:w-10 ' 
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ43wDN0j33I98NSoGA_Hm_jgIt1nYVyDWlYw&usqp=CAU" alt="" />
 
-               <p>Me</p>
+               <p className='text-white '>Me</p>
           </div>
 
 
           <div className='flex flex-col items-center px-4 lg:px-7' >
-             <h1 className='text-xl'> <FaUserAlt></FaUserAlt> </h1>
-             <p className='font-medium mt-1'>Work</p>
+             <h1 className='text-xl text-white'> <FaUserAlt></FaUserAlt> </h1>
+             <p className=' mt-1 text-white'>Work</p>
           </div>
 
       </div>

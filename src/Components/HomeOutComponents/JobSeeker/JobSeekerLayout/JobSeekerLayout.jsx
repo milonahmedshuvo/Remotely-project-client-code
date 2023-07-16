@@ -6,8 +6,7 @@ import { Outlet } from 'react-router-dom'
 const JobSeekerLayout = () => {
   return (
     <div>
-        <JobSeekerHeader></JobSeekerHeader>
-        <h1>Leyout job seeker main </h1>  
+        <JobSeekerHeader></JobSeekerHeader> 
         <Outlet></Outlet>    
     </div>
   )
