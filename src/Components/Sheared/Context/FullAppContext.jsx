@@ -7,18 +7,21 @@ export const createContextUser =  createContext()
 
 const FullAppContext = ({children}) => {
       const [user, setUser]= useState({city: "Dhaka, Bangladesh"})
-
+      const [loading, setLoading] = useState(true)
 
 
       const newUserCreate = (email, password) => {
-        return createUserWithEmailAndPassword(auth, email, password)
+        setLoading(true)
+        return createUserWithEmailAndPassword(auth, email, password)        
       }
 
       const userSingIn = (email, password) => {
+        setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
       }
 
       const userSingOut =() => {
+        setLoading(true)
         return signOut(auth)
       }  
 
@@ -27,6 +30,7 @@ const FullAppContext = ({children}) => {
        useEffect(()=> {
             const unsubcribe = onAuthStateChanged(auth, (currentUser) => {
               setUser(currentUser)
+              setLoading(false)
               console.log(currentUser)
             })
 
@@ -37,7 +41,7 @@ const FullAppContext = ({children}) => {
 
        
       
-      const info ={user, newUserCreate,  userSingIn, userSingOut}
+      const info ={user, newUserCreate,  userSingIn, userSingOut, loading }
   return (
     <div>
        <createContextUser.Provider value={info}>

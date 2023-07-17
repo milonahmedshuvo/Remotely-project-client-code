@@ -4,7 +4,8 @@ import toast, { Toaster } from "react-hot-toast";
 import { createContextUser } from "../../../Sheared/Context/FullAppContext";
 
 const Register = () => {
-  const { newUserCreate } = useContext(createContextUser);
+  const { newUserCreate, user } = useContext(createContextUser);
+  
 
   const {
     register,
@@ -21,7 +22,7 @@ const Register = () => {
     newUserCreate(data.email, data.password)
       .then((res) => {
         fetch(
-          "https://api.imgbb.com/1/upload?expiration=600&key=fb70d1eaaaaf3643c06f16d2e654b7a0",
+          "https://api.imgbb.com/1/upload?&key=fb70d1eaaaaf3643c06f16d2e654b7a0",
           {
             method: "POST",
             body: formData,
@@ -29,6 +30,7 @@ const Register = () => {
         )
           .then((res) => res.json())
           .then((imageData) => {
+            console.log(imageData.data.url)
             if (imageData.success) {
               const newUserData = {
                 userName: data.name,
@@ -37,6 +39,7 @@ const Register = () => {
                 email: data.email,
                 userIdentity: data.select,
                 image: imageData.data.url,
+                cover:"https://i.ibb.co/TbZNmCg/banner.jpg"
               };
               handleSaveUserData(newUserData);
             }

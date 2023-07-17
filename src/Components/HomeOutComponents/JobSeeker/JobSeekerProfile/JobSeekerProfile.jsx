@@ -1,13 +1,67 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaPen, FaPhotoVideo } from "react-icons/fa";
 import Modal from "./Modal";
+import { useContext } from "react";
+import { createContextUser } from "../../../Sheared/Context/FullAppContext";
+import { useQuery } from "@tanstack/react-query";
 
 const JobSeekerProfile = () => {
+    const {user, loading }= useContext(createContextUser)
+    
+    if(loading){
+      return <h1>jobSeeker profile loading...</h1>
+    }
+
+    
+      const {data , isLoading }= useQuery({
+        queryKey: ["jobSeeker", user?.email],
+        queryFn: async () => {
+          const res = await fetch(`http://localhost:5000/userInfo?email=${user?.email}`);
+          const data= await res.json()
+          return data
+        }
+      })
+
+      if(isLoading){
+        return <h1>data</h1>
+      }
+
+      console.log(data)
+      const {userName, email, address,cover,image, userIdentity, designation, } = data;   
+
+
+
+
+
+
+
   return (
     <div className="flex flex-col md:flex-row gap-2 lg:gap-6 lg:px-20 bg-[#E2E4E6] ">
       <div className="border border-green-300 w-full md:w-1/3 lg:w-1/4 bg-[#FFFFFF]">
-        <h1>job seeker profile </h1>
+        
+        
+            <div className="relative">
+                 <img
+                  className="h-[100px]"
+                  src={cover} alt="" />
+
+                 <div className="absolute top-16 left-28">
+                  <img className="h-16 w-16 rounded-full" src={image} alt="" />
+                 </div>
+            </div>
+
+
+
+
+
+
       </div>
+
+
+
+
+
+  {/* job seeker datails         */}
 
       <div className="border border-red-500 w-full md:w-2/3 lg:w-3/4 bg-[#FFFFFF]">
         <div>
@@ -15,7 +69,7 @@ const JobSeekerProfile = () => {
             <div className="flex items-center ">
               <img
                 className="rounded-full  h-14 w-14 "
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ43wDN0j33I98NSoGA_Hm_jgIt1nYVyDWlYw&usqp=CAU"
+                src={image}
                 alt=""
               />
 
