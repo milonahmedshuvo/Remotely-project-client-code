@@ -37,7 +37,7 @@ const JobSeekerProfile = () => {
 
   return (
     <div className="flex flex-col md:flex-row gap-2 lg:gap-6 lg:px-20 bg-[#E2E4E6] ">
-      <div className="border border-green-300 w-full md:w-1/3 lg:w-1/4 bg-[#FFFFFF]">
+      <div className=" w-full md:w-1/3 lg:w-1/4 bg-[#FFFFFF]">
         
 
             <div className="relative">
@@ -112,7 +112,7 @@ const JobSeekerProfile = () => {
 
   {/* job seeker datails         */}
 
-      <div className="border border-red-500 w-full md:w-2/3 lg:w-3/4 bg-[#FFFFFF]">
+      <div className=" w-full md:w-2/3 lg:w-3/4 bg-[#FFFFFF]">
         <div>
           <div className="flex justify-between items-center py-7 px-5 border-b border-gray-300 ">
             <div className="flex items-center ">
@@ -157,6 +157,16 @@ const JobSeekerProfile = () => {
               </div>
             </div>
           </div>
+
+              <hr></hr>
+
+
+
+
+
+
+
+
         </div>
       </div>
     </div>
