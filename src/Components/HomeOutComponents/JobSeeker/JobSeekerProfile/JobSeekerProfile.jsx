@@ -26,7 +26,7 @@ const JobSeekerProfile = () => {
         return <h1>data</h1>
       }
 
-      console.log(data)
+      
       const {userName, email, address,cover,image, userIdentity, designation, } = data;   
 
 
@@ -39,7 +39,7 @@ const JobSeekerProfile = () => {
     <div className="flex flex-col md:flex-row gap-2 lg:gap-6 lg:px-20 bg-[#E2E4E6] ">
       <div className="border border-green-300 w-full md:w-1/3 lg:w-1/4 bg-[#FFFFFF]">
         
-        
+
             <div className="relative">
                  <img
                   className="h-[100px]"
@@ -50,7 +50,56 @@ const JobSeekerProfile = () => {
                  </div>
             </div>
 
+              <div className="mt-10">
+                <p className="text-center text-xl font-bold">{userName}</p>
+                <p className="text-center text-sm font-medium">{email}</p>
+                <p className="text-center text-sm">{designation}</p>
+                <p className="text-center text-sm">{address}</p>
 
+
+                <div className="w-1/3 ml-20">
+                  <input
+                   className="bg-blue-500 px-3 py-1 mt-10 text-white font-bold rounded-full "
+                   type="button" value="Update Profile" />
+                </div>
+
+                <hr className="mt-8  "></hr>
+                 <div className="flex justify-between items-center  py-4 mx-4">
+                  
+                    <div className="hover:text-blue-400">
+                       <p className="font-medium text-sm">Connections</p>
+                       <p className="font-medium">Grow your network</p>
+                    </div>
+                  
+                            <div>
+                              <input
+                                className="bg-[#28A856] px-3 py-1  text-white font-bold rounded-full "
+                                  type="button" value="0" />
+                            </div>
+                     
+                  
+                  </div> 
+
+
+
+
+                  <hr className="mt-2  "></hr>
+                 <div className="flex justify-between items-center  py-4 mx-4">
+                  
+                    <div>
+                       <p className="text-sm hover:text-blue-400 ">Profile Visitors</p>
+                       
+                    </div>
+                  
+                            <div>
+                              <input
+                                className="bg-[#28A856] px-3 py-1  text-white font-bold rounded-full "
+                                  type="button" value="1" />
+                            </div>
+                     
+                  
+                  </div>  
+              </div>
 
 
 
@@ -92,17 +141,17 @@ const JobSeekerProfile = () => {
             <h2 className="text-xl">Create your post </h2>
 
             <div className="flex justify-between py-3 ">
-              <div className="flex items-center px-4 py-2 bg-blue-100 rounded-full mr-2 ">
+              <div className="flex items-center px-4 py-1 bg-blue-100 rounded-full mr-2 ">
                 <FaPhotoVideo className="text-[#0069D9] text-xl mr-2"></FaPhotoVideo>
                 <p className="font-medium">Photo</p>
               </div>
 
-              <div className="flex items-center  px-4 py-2 bg-blue-100 rounded-full mr-2 ">
+              <div className="flex items-center  px-4 py-1 bg-blue-100 rounded-full mr-2 ">
                 <FaPhotoVideo className="text-[#28A745] text-xl mr-1"></FaPhotoVideo>
                 <p className="font-medium">Video</p>
               </div>
 
-              <div className="flex items-center  px-4 py-2 bg-blue-100 rounded-full mr-2 ">
+              <div className="flex items-center  px-4 py-1 bg-blue-100 rounded-full mr-2 ">
                 <FaPhotoVideo className="text-yellow-600 text-xl mr-1"></FaPhotoVideo>
                 <p className="font-medium">Files</p>
               </div>
