@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { createContextUser } from '../../../../Sheared/Context/FullAppContext'
 import { useQuery } from '@tanstack/react-query'
+import SingleJobPosts from './SingleJobPosts'
 
 const MyJobPost = () => {
       const { user, loading }= useContext(createContextUser)
@@ -22,12 +23,20 @@ const MyJobPost = () => {
         return <h1> my job post loading...</h1>
       }
 
-      console.log("jobposts data", jobposts)
+      
        
 
   return (
-    <div>
-        <h1>my job post</h1>  
+    <div className='grid grid-cols-1 ml-7 mt-10 mr-14'>
+      
+
+
+        {
+            jobposts.map((posts, i) => <SingleJobPosts
+            key={i}
+            posts={posts}
+            ></SingleJobPosts>)
+        }  
     </div>
   )
 }
