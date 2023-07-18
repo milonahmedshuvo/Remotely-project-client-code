@@ -1,11 +1,8 @@
 import React from "react";
 import { toast } from "react-hot-toast";
 
-const Modal = ({userIdentity}) => {
-
-
-console.log("userIdentity", userIdentity )
-
+const Modal = ({ userIdentity }) => {
+  console.log("userIdentity", userIdentity);
 
   const handleCreatePostData = (event) => {
     event.preventDefault();
@@ -20,37 +17,28 @@ console.log("userIdentity", userIdentity )
       company,
       address,
       drescription,
-      userIdentity
+      userIdentity,
     };
     console.log(createPostData);
-    fetch('http://localhost:5000/jobSeeker/employerJobpost', {
-      method:"POST",
+    fetch("http://localhost:5000/jobSeeker/employerJobpost", {
+      method: "POST",
       headers: {
-        "content-type": "application/json"
+        "content-type": "application/json",
       },
-      body: JSON.stringify(createPostData)
+      body: JSON.stringify(createPostData),
     })
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(data)
-      toast.success("Succesful submit..!!")
-    })
-    .catch((err) => {
-      toast.error("faild Submit..!!")
-    })
-
-
-
-    
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        toast.success("Succesful submit..!!");
+      })
+      .catch((err) => {
+        toast.error("faild Submit..!!");
+      });
   };
-
-  
 
   return (
     <div>
-      {/* The button to open modal */}
-
-      {/* Put this part before </body> tag */}
       <input type="checkbox" id="my_modal_6" className="modal-toggle" />
       <div className="modal">
         <div className="modal-box">
