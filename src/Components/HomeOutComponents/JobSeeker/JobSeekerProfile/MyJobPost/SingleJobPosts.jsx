@@ -1,10 +1,24 @@
 import React from "react";
+import { toast } from "react-hot-toast";
 
 const SingleJobPosts = ({ posts, refetch }) => {
-  console.log(posts);
-  const { address, company, drescription, jobPossition } = posts;
+  const { address, company, drescription, jobPossition, _id } = posts;
 
-  refetch();
+  const handlePostDelete = (id) => {
+    fetch(`http://localhost:5000/jobPostDelete/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        toast.success("Succesfull Delete Post..!!");
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error("Faild Delete post..!!");
+      });
+  };
+
   return (
     <div>
       <div className="border border-gray-300 rounded mb-5 px-3 py-2">
@@ -16,8 +30,15 @@ const SingleJobPosts = ({ posts, refetch }) => {
           </div>
 
           <div className="flex ">
-            <button className="btn btn-success btn-outline btn-sm mr-2">publish</button>
-            <button className="btn btn-error btn-outline btn-sm mr-2 ">Delete</button>
+            <button className="btn btn-success btn-outline btn-sm mr-2">
+              publish
+            </button>
+            <button
+              onClick={() => handlePostDelete(_id)}
+              className="btn btn-error btn-outline btn-sm mr-2 "
+            >
+              Delete
+            </button>
           </div>
         </div>
 
