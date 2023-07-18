@@ -1,6 +1,12 @@
 import React from "react";
+import { toast } from "react-hot-toast";
 
-const Modal = () => {
+const Modal = ({userIdentity}) => {
+
+
+console.log("userIdentity", userIdentity )
+
+
   const handleCreatePostData = (event) => {
     event.preventDefault();
 
@@ -14,8 +20,27 @@ const Modal = () => {
       company,
       address,
       drescription,
+      userIdentity
     };
     console.log(createPostData);
+    fetch('http://localhost:5000/jobSeeker/employerJobpost', {
+      method:"POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify(createPostData)
+    })
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data)
+      toast.success("Succesful submit..!!")
+    })
+    .catch((err) => {
+      toast.error("faild Submit..!!")
+    })
+
+
+
   };
 
   

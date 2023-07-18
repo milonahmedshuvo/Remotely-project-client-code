@@ -133,7 +133,9 @@ const JobSeekerProfile = () => {
                 className="text-[#28A745] text-3xl"                
               ></FaPen>
               </label>              
-              <Modal></Modal>
+              <Modal
+              userIdentity={userIdentity}
+              ></Modal>
             </div>
           </div>
 
