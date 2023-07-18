@@ -12,6 +12,7 @@ const SingleJobPosts = ({ posts, refetch }) => {
       .then((data) => {
         console.log(data);
         toast.success("Succesfull Delete Post..!!");
+        refetch()
       })
       .catch((err) => {
         console.log(err);
@@ -47,5 +48,6 @@ const SingleJobPosts = ({ posts, refetch }) => {
     </div>
   );
 };
+
 
 export default SingleJobPosts;
