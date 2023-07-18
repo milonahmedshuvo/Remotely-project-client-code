@@ -57,7 +57,9 @@ const JobSeekerHeader = () => {
 
           <div className='flex flex-col items-center  mr-3'>
               <p className='text-white text-xl'><FaMoneyCheck></FaMoneyCheck> </p>
-              <p className='text-white '>ePortfolio</p>
+
+              <Link to="/jobSeeker/ddd"> <p className='text-white '>My Post</p>   </Link>
+              
           </div>
 
 

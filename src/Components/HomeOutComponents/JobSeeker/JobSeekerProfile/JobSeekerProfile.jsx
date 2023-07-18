@@ -4,6 +4,7 @@ import Modal from "./Modal";
 import { useContext } from "react";
 import { createContextUser } from "../../../Sheared/Context/FullAppContext";
 import { useQuery } from "@tanstack/react-query";
+import { Outlet } from "react-router-dom";
 
 const JobSeekerProfile = () => {
     const {user, loading }= useContext(createContextUser)
@@ -135,6 +136,7 @@ const JobSeekerProfile = () => {
               </label>              
               <Modal
               userIdentity={userIdentity}
+              email={email}
               ></Modal>
             </div>
           </div>
@@ -163,7 +165,7 @@ const JobSeekerProfile = () => {
               <hr></hr>
 
 
-
+              <Outlet></Outlet>
 
 
 

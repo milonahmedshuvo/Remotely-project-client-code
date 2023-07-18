@@ -11,6 +11,7 @@ import Login from "./Components/HomeOutComponents/User/Login/Login";
 import Register from "./Components/HomeOutComponents/User/Register/Register";
 import JobSeekerLayout from "./Components/HomeOutComponents/JobSeeker/JobSeekerLayout/JobSeekerLayout";
 import JobSeekerProfile from "./Components/HomeOutComponents/JobSeeker/JobSeekerProfile/JobSeekerProfile";
+import MyJobPost from "./Components/HomeOutComponents/JobSeeker/JobSeekerProfile/MyJobPost/MyJobPost";
 
 export const router = createBrowserRouter([
     {
@@ -79,7 +80,13 @@ export const router = createBrowserRouter([
         children: [
            {
                path: '/jobSeeker',
-               element: <JobSeekerProfile></JobSeekerProfile>
+               element: <JobSeekerProfile></JobSeekerProfile>,
+               children: [
+                   {
+                      path: "/jobSeeker/ddd",
+                      element: <MyJobPost></MyJobPost>
+                   }
+               ]
            }
         ] 
     }

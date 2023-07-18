@@ -1,7 +1,7 @@
 import React from "react";
 import { toast } from "react-hot-toast";
 
-const Modal = ({ userIdentity }) => {
+const Modal = ({ userIdentity, email }) => {
   console.log("userIdentity", userIdentity);
 
   const handleCreatePostData = (event) => {
@@ -18,6 +18,7 @@ const Modal = ({ userIdentity }) => {
       address,
       drescription,
       userIdentity,
+      email
     };
     console.log(createPostData);
     fetch("http://localhost:5000/jobSeeker/employerJobpost", {
