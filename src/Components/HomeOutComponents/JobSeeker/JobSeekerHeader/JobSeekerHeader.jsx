@@ -69,12 +69,7 @@ const JobSeekerHeader = () => {
             </div>
           </Link>
 
-          <div className="flex flex-col items-center  mr-3">
-            <p className="text-white text-xl">
-              <FaIdCard></FaIdCard>{" "}
-            </p>
-            <p className="text-white ">Messaging</p>
-          </div>
+          
 
           <div className="flex flex-col items-center  mr-3">
             <p className="text-white text-xl">
@@ -83,6 +78,14 @@ const JobSeekerHeader = () => {
             <p className="text-white ">Notifications</p>
           </div>
         </div>
+
+
+        <div className="flex flex-col items-center  mr-3">
+            <p className="text-white text-xl">
+              <FaIdCard></FaIdCard>{" "}
+            </p>
+            <p className="text-white ">DashBord</p>
+          </div>
 
         {/* Me and Work  */}
 

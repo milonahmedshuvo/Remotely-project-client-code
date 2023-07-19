@@ -12,6 +12,7 @@ import Register from "./Components/HomeOutComponents/User/Register/Register";
 import JobSeekerLayout from "./Components/HomeOutComponents/JobSeeker/JobSeekerLayout/JobSeekerLayout";
 import JobSeekerProfile from "./Components/HomeOutComponents/JobSeeker/JobSeekerProfile/JobSeekerProfile";
 import MyJobPost from "./Components/HomeOutComponents/JobSeeker/JobSeekerProfile/MyJobPost/MyJobPost";
+import FindJobs from "./Components/HomeOutComponents/FindJobs/FindJobs/FindJobs";
 
 export const router = createBrowserRouter([
     {
@@ -30,6 +31,10 @@ export const router = createBrowserRouter([
            path: "/howcanhelp",
            element: <HowCanhelp> </HowCanhelp>
         },
+         {  
+            path: "/findjobs",
+            element: <FindJobs></FindJobs>
+         },
          {
             path: '/login',
             element: <Login> </Login>

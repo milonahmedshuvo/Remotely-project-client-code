@@ -22,7 +22,7 @@ const Navber1 = () => {
 
     const manuItem = <>
      <Link to="/" className='text-lg font-medium uppercase ml-5 text-[#0983C0] '>Home</Link> 
-     <Link to="/" className='text-lg font-medium uppercase ml-5 text-[#0983C0]'>Find Jobs</Link> 
+     <Link to="/findjobs" className='text-lg font-medium uppercase ml-5 text-[#0983C0]'>Find Jobs</Link> 
      <Link to="/sixcompany" className='text-lg font-medium uppercase ml-5 text-[#0983C0]'>Browse Companies</Link> 
      <Link to="/" className='text-lg font-medium uppercase ml-5 text-[#0983C0]'>Career Advice</Link> 
      <Link to="/howcanhelp" className='text-lg font-medium uppercase ml-5 text-[#0983C0]'>Help Center</Link>
