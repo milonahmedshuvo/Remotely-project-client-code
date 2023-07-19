@@ -14,7 +14,7 @@ const JobSeekerProfile = () => {
     }
 
     
-      const {data , isLoading }= useQuery({
+      const {data , isLoading, refetch }= useQuery({
         queryKey: ["jobSeeker", user?.email],
         queryFn: async () => {
           const res = await fetch(`http://localhost:5000/userInfo?email=${user?.email}`);
@@ -29,11 +29,12 @@ const JobSeekerProfile = () => {
 
       
       const {userName, email, address,cover,image, userIdentity, designation, } = data;   
+      refetch()
+      console.log(email, userIdentity)
+ 
 
 
-
-
-
+        
 
 
   return (

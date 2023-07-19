@@ -27,7 +27,7 @@ const MyJobPost = () => {
 
       
        
-
+     refetch()
   return (
     <div className='grid grid-cols-1 ml-7 mt-10 mr-14'>
       

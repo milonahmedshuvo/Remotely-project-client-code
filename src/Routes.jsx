@@ -75,15 +75,15 @@ export const router = createBrowserRouter([
     },
     // job seeker layout and start components 
     {
-        path: "/jobSeeker",
+        path: "/employer",
         element: <JobSeekerLayout></JobSeekerLayout>,
         children: [
            {
-               path: '/jobSeeker',
+               path: '/employer',
                element: <JobSeekerProfile></JobSeekerProfile>,
                children: [
                    {
-                      path: "/jobSeeker/ddd",
+                      path: "/employer/ddd",
                       element: <MyJobPost></MyJobPost>
                    }
                ]
