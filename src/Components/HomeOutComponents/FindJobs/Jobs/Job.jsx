@@ -37,6 +37,8 @@ const Job = ({ job }) => {
 
 
   return (
+
+    
     <div className="bg-[#F4FCFF] px-3 pt-6 pb-10 my-2 rounded">
       <div className="flex justify-between">
         <h2 className="text-[#2196F3] font-semibold text-lg">{jobTitle}</h2>
