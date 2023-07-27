@@ -1,7 +1,7 @@
 import React from "react";
 import { toast } from "react-hot-toast";
 
-const SingleJobPosts = ({ posts, refetch }) => {
+const SingleJobPosts = ({ posts }) => {
   const { address, company, drescription, jobPossition, _id } = posts;
 
   const handlePostDelete = (id) => {
@@ -12,13 +12,16 @@ const SingleJobPosts = ({ posts, refetch }) => {
       .then((data) => {
         console.log(data);
         toast.success("Succesfull Delete Post..!!");
-        refetch()
+        // refetch()
       })
       .catch((err) => {
         console.log(err);
         toast.error("Faild Delete post..!!");
       });
   };
+
+
+
 
   return (
     <div>

@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useReducer } from "react";
 import { toast } from "react-hot-toast";
 
 const Modal = ({ userIdentity, email }) => {
-  console.log("userIdentity", userIdentity);
+  const [ignored, forceUpdate] = useReducer(x => x + 1, 0);
+  
 
   const handleCreatePostData = (event) => {
     event.preventDefault();
@@ -32,6 +33,7 @@ const Modal = ({ userIdentity, email }) => {
       .then((data) => {
         console.log(data);
         toast.success("Succesful submit..!!");
+        forceUpdate()
       })
       .catch((err) => {
         toast.error("faild Submit..!!");
