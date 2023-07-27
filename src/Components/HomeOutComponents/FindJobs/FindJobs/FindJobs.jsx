@@ -1,5 +1,6 @@
 import React from "react";
 import { FaBeer } from "react-icons/fa";
+import { Outlet } from "react-router-dom";
 
 const FindJobs = () => {
 
@@ -10,7 +11,7 @@ const FindJobs = () => {
 
   
   return (
-    <div className="bg-[#D9EAF5] py-16">
+    <div className="bg-[#D9EAF5] py-16 ">
       <div className="ml-20 grid grid-cols-1 md:grid-cols-2">
         {/* Frist div */}
         <div className="">
@@ -66,7 +67,30 @@ const FindJobs = () => {
             <p>Mobile & it</p>
           </div>
         </div>
+
+
+
+
+
       </div>
+
+
+
+         {/* Outlet children components  */}
+
+         <div className="ml-20 my-20 mr-20">
+
+            <Outlet></Outlet>
+
+         </div>
+
+          
+
+
+
+
+
+
     </div>
   );
 };

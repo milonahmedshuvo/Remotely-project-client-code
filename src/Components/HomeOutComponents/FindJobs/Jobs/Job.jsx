@@ -1,25 +1,42 @@
 import React from "react";
 import {
-  FaBeer,
-  FaStar,
-  FaStarOfDavid,
-  FaRegStar,
-  FaAirbnb,
-  FaStarHalfAlt,
-  FaLowVision,
-  FaEnvelopeOpen,
-  FaTv,
-  FaUniversity,
-  FaPeopleArrows,
-  FaRegHeart,
-} from "react-icons/fa";
-import { Link } from "react-router-dom";
+    FaBeer,
+    FaStar,
+    FaStarOfDavid,
+    FaRegStar,
+    FaAirbnb,
+    FaStarHalfAlt,
+    FaLowVision,
+    FaEnvelopeOpen,
+    FaTv,
+    FaUniversity,
+    FaPeopleArrows,
+    FaRegHeart,
+  } from "react-icons/fa";
+  import { Link } from "react-router-dom";
 
-const JobpostSingle = ({ post }) => {
-  const { jobTitle, location, jobtype, drescription, companyName, _id } = post;
+
+
+
+
+const Job = ({ job }) => {
+  const {
+    companyName,
+    drescription,
+    drescriptionTwo,
+    experince,
+    indrusty,
+    jobSkills,
+    jobTitle,
+    jobtype,
+    location,
+  } = job;
+
+
+
 
   return (
-    <div className="bg-[#F4FCFF] px-3 pt-6 pb-10 my-2">
+    <div className="bg-[#F4FCFF] px-3 pt-6 pb-10 my-2 rounded">
       <div className="flex justify-between">
         <h2 className="text-[#007CD8] font-semibold text-lg">{jobTitle}</h2>
         <FaRegStar className="text-[#46AC49] text-[30px]"></FaRegStar>
@@ -39,7 +56,7 @@ const JobpostSingle = ({ post }) => {
       <div className=" flex justify-end mt-2">
         <p className="btn btn-sm bg-[#46AC49] hover:bg-[#46AC49] hover:text-white text-white btn-outline border-none">
           <Link
-            to={`/companyJob/${_id}`}
+            
             className="text-white hover:text-white"
           >
             View Post
@@ -50,4 +67,4 @@ const JobpostSingle = ({ post }) => {
   );
 };
 
-export default JobpostSingle;
+export default Job;
