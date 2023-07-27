@@ -44,6 +44,8 @@ const Job = ({ job }) => {
       </div>
 
 
+
+
         <div className="flex items-center" >
             <h1 className='text-[#2196F3] text-xl mr-2'>{companyName} </h1>
             <FaCheckCircle className="text-[#2196F3]"></FaCheckCircle>
