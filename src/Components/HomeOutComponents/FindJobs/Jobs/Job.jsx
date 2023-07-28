@@ -79,8 +79,7 @@ const Job = ({ job }) => {
 
       <div className=" flex justify-end mt-2">
         <p className="btn btn-sm bg-[#46AC49] hover:bg-[#46AC49] hover:text-white text-white btn-outline border-none">
-          <Link
-            // onClick={`/findjobs/oneviewpost/${_id}`}
+          <Link to={`/findjobs/oneviewpost/${_id}`}           
             className="text-white hover:text-white"
           >
             View Post

@@ -15,6 +15,7 @@ import MyJobPost from "./Components/HomeOutComponents/JobSeeker/JobSeekerProfile
 import FindJobs from "./Components/HomeOutComponents/FindJobs/FindJobs/FindJobs";
 import Jobs from "./Components/HomeOutComponents/FindJobs/Jobs/Jobs";
 import SearchData from "./Components/HomeOutComponents/FindJobs/FindJobs/SearchData";
+import OneJobView from "./Components/HomeOutComponents/FindJobs/Jobs/OneJobView";
 
 
 export const router = createBrowserRouter([
@@ -45,6 +46,13 @@ export const router = createBrowserRouter([
                {
                   path: "/findjobs/searchDataShow",
                   element: <SearchData></SearchData>
+               },
+               {
+                  path: "/findjobs/oneviewpost/:id",
+                  element: <OneJobView></OneJobView>,
+                  loader: async ({params}) => {
+                     return fetch(`http://localhost:5000/alljobOneViewPost/${params.id}`)
+                  }
                }
                
             ]
