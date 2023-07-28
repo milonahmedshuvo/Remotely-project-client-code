@@ -42,15 +42,16 @@ const OnepostDatails = () => {
 
           <div className='mt-10'>
             <p className='text-xl mb-2'>Job Drescription</p>
-            <p className='text-sm'>{drescription}.</p>
-            <p className='text-sm mt-2'>{drescriptionTwo}.</p>
+            <p className='text-md'>{drescription}.</p>
+            <p className='text-md mt-2'>{drescriptionTwo}.</p>
 
             <p className='text-xl mb-2 mt-7' >Job Skills</p>
              <div>
                   {
-                    jobSkills.split(" ").map((skill, i) => <ul key={i}>
-                      <li className='mt-1'>{skill}</li>
-                    </ul> )
+                    jobSkills.split(" ").map((skill, i) =><span
+                    className="mx-2"
+                    key={i}
+                    > {skill} </span> )
                   }
              </div>
 
