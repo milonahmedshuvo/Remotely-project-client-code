@@ -13,7 +13,24 @@ const FindJobs = () => {
     },
   });
 
-  console.log(datas);
+   
+  const handleSerchData = (event) => {
+    event.preventDefault()
+    const jobTitle = event.target.jobPossition.value
+    const company = event.target.company.value
+    
+    fetch(`http://localhost:5000/jobSerchFilter?company=${company}&job=${jobTitle}`)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("Database Response ", data)
+    }) 
+    .catch((err) => {
+      console.log(err)
+    })
+
+    console.log("submitttttttttttt")
+
+  }
 
   return (
     <div className="bg-[#D9EAF5] py-16 ">
@@ -28,7 +45,9 @@ const FindJobs = () => {
             Find professionals that best match your job requirements.
           </p>
 
-          <div className="flex flex-col md:flex-row mt-14 ">
+          <form 
+           onSubmit={handleSerchData}
+           className="flex flex-col md:flex-row mt-14 ">
             {/* <input
               type="text"
               placeholder="Keyword, Title"
@@ -41,7 +60,7 @@ const FindJobs = () => {
               className="input input-bordered  ml-0 md:ml-2 mb-2 md:mb-0"
             /> */}
 
-            <select className="select select-bordered ml-0 md:ml-2 mb-2 md:mb-0 w-full">
+            <select name="company" className="select select-bordered ml-0 md:ml-2 mb-2 md:mb-0 w-full">
               <option disabled selected>
                 Company
               </option>
@@ -54,7 +73,7 @@ const FindJobs = () => {
               <option>Workday</option>
             </select>
 
-            <select className="select select-bordered ml-0 md:ml-4 mb-2 md:mb-0 w-full">
+            <select name="jobPossition" className="select select-bordered ml-0 md:ml-4 mb-2 md:mb-0 w-full">
               <option disabled selected>
                 job Possition
               </option>
@@ -65,11 +84,11 @@ const FindJobs = () => {
             </select>
 
             <input
-              type="button"
+              type="submit"
               value="Find Jobs"
               className="bg-[#2196F3] text-white py-3 px-4 rounded ml-0 md:ml-4 mb-2 md:mb-0 font-bold md:font-medium"
             />
-          </div>
+          </form>
         </div>
 
         {/* secound section  */}
