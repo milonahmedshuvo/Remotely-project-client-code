@@ -28,7 +28,6 @@ const FindJobs = () => {
       console.log(err)
     })
 
-    console.log("submitttttttttttt")
 
   }
 
