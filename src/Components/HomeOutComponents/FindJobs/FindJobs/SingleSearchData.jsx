@@ -30,6 +30,7 @@ const SingleSearchData = ({ job }) => {
     jobTitle,
     jobtype,
     location,
+    _id
   } = job;
 
 
@@ -60,7 +61,9 @@ const SingleSearchData = ({ job }) => {
 
       <div className=" flex justify-end mt-2">
         <p className="btn btn-sm bg-[#46AC49] hover:bg-[#46AC49] hover:text-white text-white btn-outline border-none">
-          <Link className="text-white hover:text-white">View Post</Link>
+          <Link
+          to={`/findjobs/oneviewpost/${_id}`} 
+          className="text-white hover:text-white">View Post</Link>
         </p>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import {
   FaBeer,
   FaStar,
@@ -18,10 +18,14 @@ import {
 } from "react-icons/fa";
 import { useContext } from "react";
 import { createContextUser } from "../../../Sheared/Context/FullAppContext";
+import { toast } from "react-hot-toast";
 
 const OneJobView = () => {
   const oneJob = useLoaderData();
   const { user, loading } = useContext(createContextUser);
+  const navigate = useNavigate()
+
+
   if (loading) {
     return <h2>Loading...</h2>;
   }
@@ -55,6 +59,24 @@ const OneJobView = () => {
       email: user?.email
     };
     console.log(applydata);
+
+    fetch("http://localhost:5000/applyDataPost", {
+        method: "POST",
+        headers: {
+            "content-type": "application/json"
+        },
+        body: JSON.stringify(applydata)
+    })
+    .then((res) => res.json())
+    .then((data) => {
+        console.log(data)
+        navigate("/succesfulSubmit")
+        toast.success("Your Application Succesfull..!!")
+    })
+    .catch((err) => {
+        toast.error(err)
+    })
+
   };
 
   return (

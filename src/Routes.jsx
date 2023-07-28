@@ -16,6 +16,7 @@ import FindJobs from "./Components/HomeOutComponents/FindJobs/FindJobs/FindJobs"
 import Jobs from "./Components/HomeOutComponents/FindJobs/Jobs/Jobs";
 import SearchData from "./Components/HomeOutComponents/FindJobs/FindJobs/SearchData";
 import OneJobView from "./Components/HomeOutComponents/FindJobs/Jobs/OneJobView";
+import SuccesfulSubmit from "./Components/HomeOutComponents/FindJobs/Jobs/SuccesfulSubmit";
 
 
 export const router = createBrowserRouter([
@@ -54,8 +55,11 @@ export const router = createBrowserRouter([
                      return fetch(`http://localhost:5000/alljobOneViewPost/${params.id}`)
                   }
                }
-               
             ]
+         },
+         {
+            path: "/succesfulSubmit",
+            element: <SuccesfulSubmit></SuccesfulSubmit>
          },
          {
             path: '/login',
