@@ -1,15 +1,20 @@
+import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { FaBeer } from "react-icons/fa";
 import { Outlet } from "react-router-dom";
 
 const FindJobs = () => {
+  const { data: datas = [] } = useQuery({
+    queryKey: ["datas"],
+    queryFn: async () => {
+      const res = await fetch("http://localhost:5000/findJobLocation");
+      const data = await res.json();
+      return data;
+    },
+  });
 
+  console.log(datas);
 
-
-
-
-
-  
   return (
     <div className="bg-[#D9EAF5] py-16 ">
       <div className="ml-20 grid grid-cols-1 md:grid-cols-2">
@@ -40,19 +45,25 @@ const FindJobs = () => {
               <option disabled selected>
                 Company
               </option>
-              <option>Han Solo</option>
-              <option>Greedo</option>
+
+              <option>FaceBook</option>
+              <option>Amazon</option>
+              <option>Google</option>
+              <option>Tesla</option>
+              <option>PWC</option>
+              <option>Workday</option>
             </select>
 
             <select className="select select-bordered ml-0 md:ml-4 mb-2 md:mb-0 w-full">
               <option disabled selected>
-              jobTitle
+                job Possition
               </option>
-              <option>Han Solo</option>
-              <option>Greedo</option>
+
+              {datas.map((el, i) => (
+                <option key={i}> {el.jobTitle}</option>
+              ))}
             </select>
 
-           
             <input
               type="button"
               value="Find Jobs"
@@ -67,30 +78,13 @@ const FindJobs = () => {
             <p>Mobile & it</p>
           </div>
         </div>
-
-
-
-
-
       </div>
 
+      {/* Outlet children components  */}
 
-
-         {/* Outlet children components  */}
-
-         <div className="ml-20 my-20 mr-20">
-
-            <Outlet></Outlet>
-
-         </div>
-
-          
-
-
-
-
-
-
+      <div className="ml-20 my-20 mr-20">
+        <Outlet></Outlet>
+      </div>
     </div>
   );
 };
