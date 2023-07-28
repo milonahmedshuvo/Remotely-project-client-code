@@ -14,6 +14,8 @@ import JobSeekerProfile from "./Components/HomeOutComponents/JobSeeker/JobSeeker
 import MyJobPost from "./Components/HomeOutComponents/JobSeeker/JobSeekerProfile/MyJobPost/MyJobPost";
 import FindJobs from "./Components/HomeOutComponents/FindJobs/FindJobs/FindJobs";
 import Jobs from "./Components/HomeOutComponents/FindJobs/Jobs/Jobs";
+import SearchData from "./Components/HomeOutComponents/FindJobs/FindJobs/SearchData";
+
 
 export const router = createBrowserRouter([
     {
@@ -39,7 +41,12 @@ export const router = createBrowserRouter([
                {
                   path: '/findjobs',
                   element: <Jobs></Jobs>
+               },
+               {
+                  path: "/findjobs/searchDataShow",
+                  element: <SearchData></SearchData>
                }
+               
             ]
          },
          {

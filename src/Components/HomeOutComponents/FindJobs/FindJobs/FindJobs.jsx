@@ -1,9 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
-import React from "react";
+import React, { useContext } from "react";
 import { FaBeer } from "react-icons/fa";
-import { Outlet } from "react-router-dom";
+import { Link, Navigate, Outlet, useNavigate } from "react-router-dom";
+import { createContextUser } from "../../../Sheared/Context/FullAppContext";
 
 const FindJobs = () => {
+  const {setSearchData} = useContext(createContextUser)
+  const navigate = useNavigate();
+
+
   const { data: datas = [] } = useQuery({
     queryKey: ["datas"],
     queryFn: async () => {
@@ -18,11 +23,15 @@ const FindJobs = () => {
     event.preventDefault()
     const jobTitle = event.target.jobPossition.value
     const company = event.target.company.value
-    
+    console.log("clickkkkkkkkkkkkkkkk")
+
     fetch(`http://localhost:5000/jobSerchFilter?company=${company}&job=${jobTitle}`)
     .then((res) => res.json())
     .then((data) => {
       console.log("Database Response ", data)
+      setSearchData(data)
+      navigate("/findjobs/searchDataShow")
+      
     }) 
     .catch((err) => {
       console.log(err)
@@ -82,18 +91,31 @@ const FindJobs = () => {
               ))}
             </select>
 
-            <input
+
+            {/* <Link to="/findjobs/searchDataShow">  */}
+            
+            {/* <input
               type="submit"
               value="Find Jobs"
               className="bg-[#2196F3] text-white py-3 px-4 rounded ml-0 md:ml-4 mb-2 md:mb-0 font-bold md:font-medium"
-            />
+            /> */}
+            {/* </Link> */}
+
+            <button
+             className="bg-[#2196F3] text-white  px-10 rounded ml-0 md:ml-4 mb-2 md:mb-0 font-bold md:font-medium"
+             type="submit"
+             >
+              job
+             </button>
+
+            
           </form>
         </div>
 
         {/* secound section  */}
         <div>
           <div className="bg-[##f0f9ff]">
-            <p>Mobile & it</p>
+            {/* <p>Mobile & it</p> */}
           </div>
         </div>
       </div>

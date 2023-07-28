@@ -8,7 +8,8 @@ export const createContextUser =  createContext()
 const FullAppContext = ({children}) => {
       const [user, setUser]= useState({city: "Dhaka, Bangladesh"})
       const [loading, setLoading] = useState(true)
-
+      const [searchData, setSearchData] = useState([])
+      console.log("seeddddddddddd", searchData)   
 
       const newUserCreate = (email, password) => {
         setLoading(true)
@@ -41,7 +42,7 @@ const FullAppContext = ({children}) => {
 
        
       
-      const info ={user, newUserCreate,  userSingIn, userSingOut, loading }
+      const info ={user, newUserCreate,  userSingIn, userSingOut, loading, setSearchData,searchData }
   return (
     <div>
        <createContextUser.Provider value={info}>
