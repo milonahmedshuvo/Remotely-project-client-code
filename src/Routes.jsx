@@ -20,6 +20,7 @@ import SuccesfulSubmit from "./Components/HomeOutComponents/FindJobs/Jobs/Succes
 import Applying from "./Components/HomeOutComponents/JobSeeker/JobSeekerProfile/Applying/Applying";
 import EmployerLayout from "./Components/HomeOutComponents/Employer/EmployerLayout/EmployerLayout";
 import EmployerProfile from "./Components/HomeOutComponents/Employer/EmployerProfile/EmployerProfile";
+import EmployerJobPost from "./Components/HomeOutComponents/Employer/EmployerJobPost/EmployerJobPost";
 
 export const router = createBrowserRouter([
   {
@@ -137,8 +138,15 @@ export const router = createBrowserRouter([
     children: [
        {
           path:"/employer",
-          element: <EmployerProfile></EmployerProfile>
-       }
+          element: <EmployerProfile></EmployerProfile>,
+          children: [
+            {
+              path:"/employer/jobpost",
+              element:<EmployerJobPost></EmployerJobPost>
+           }
+          ]
+       },
+       
     ]
   }
 

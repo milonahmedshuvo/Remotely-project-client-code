@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import {
     FaUserAlt,
@@ -8,6 +8,9 @@ import {
     FaMoneyCheck,
     FaHome,
   } from "react-icons/fa";
+import { createContextUser } from "../../../Sheared/Context/FullAppContext";
+import Loading from "../../../Sheared/Loading";
+import { useQuery } from "@tanstack/react-query";
 
 
 
@@ -15,7 +18,26 @@ import {
   
 
 const EmployerHeader = () => {
+  const { user, loading } = useContext(createContextUser);
 
+  if (loading) {
+    return <Loading></Loading>
+  }
+
+   const {data, isLoading } = useQuery({
+    queryKey: ["employer", user?.email],
+    queryFn: async () => {
+        const res = await fetch(`http://localhost:5000/employer?email=${user?.email}`)
+        const data = res.json()
+        return data
+    }
+   })
+
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
+
+  const { image,  }=data;
 
 
 
@@ -69,7 +91,7 @@ const EmployerHeader = () => {
             <p className="text-white ">Network</p>
           </div>
 
-          <Link to="/jobSeeker/ddd">
+          <Link to="/employer/jobpost">
             <div className="flex flex-col items-center  mr-3">
               <p className="text-white text-xl">
                 <FaMoneyCheck></FaMoneyCheck>{" "}
@@ -86,12 +108,12 @@ const EmployerHeader = () => {
           </div>
         </div>
 
-        <Link to="/jobSeeker/applying">
+        <Link to="">
           <div className="flex flex-col items-center   mr-3">
             <p className="text-white text-xl ">
               <FaIdCard></FaIdCard>{" "}
             </p>
-            <p className="text-white ">Apply</p>
+            <p className="text-white ">Messaging</p>
           </div>
         </Link>
 
@@ -101,7 +123,7 @@ const EmployerHeader = () => {
           <div className="flex flex-col items-center px-4 lg:px-7  border-white border-r-2 ">
             <img
               className="rounded-full  h-10 w-10 "
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ43wDN0j33I98NSoGA_Hm_jgIt1nYVyDWlYw&usqp=CAU"
+              src={image}
               alt=""
             />
 
