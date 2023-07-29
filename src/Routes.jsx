@@ -17,6 +17,7 @@ import Jobs from "./Components/HomeOutComponents/FindJobs/Jobs/Jobs";
 import SearchData from "./Components/HomeOutComponents/FindJobs/FindJobs/SearchData";
 import OneJobView from "./Components/HomeOutComponents/FindJobs/Jobs/OneJobView";
 import SuccesfulSubmit from "./Components/HomeOutComponents/FindJobs/Jobs/SuccesfulSubmit";
+import Applying from "./Components/HomeOutComponents/JobSeeker/JobSeekerProfile/Applying/Applying";
 
 export const router = createBrowserRouter([
   {
@@ -119,6 +120,10 @@ export const router = createBrowserRouter([
             path: "/jobSeeker/ddd",
             element: <MyJobPost></MyJobPost>,
           },
+          {
+            path: "/jobSeeker/applying",
+            element: <Applying></Applying>
+          }
         ],
       },
     ],
