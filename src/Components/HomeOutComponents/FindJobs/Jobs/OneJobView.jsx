@@ -103,6 +103,7 @@ const OneJobView = () => {
         >
           Apply Now
         </p>
+        
         <p className=" border border-[#28A745] ml-2 rounded-full hover:bg-[#28A745] btn text-[#28A745] hover:text-white  px-11 bg-white">
           Save
         </p>

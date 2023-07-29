@@ -60,7 +60,7 @@ const JobSeekerHeader = () => {
             <p className="text-white ">Network</p>
           </div>
 
-          <Link to="/employer/ddd">
+          <Link to="/jobSeeker/ddd">
             <div className="flex flex-col items-center  mr-3">
               <p className="text-white text-xl">
                 <FaMoneyCheck></FaMoneyCheck>{" "}
@@ -84,7 +84,7 @@ const JobSeekerHeader = () => {
             <p className="text-white text-xl">
               <FaIdCard></FaIdCard>{" "}
             </p>
-            <p className="text-white ">DashBord</p>
+            <p className="text-white ">Apply</p>
           </div>
 
         {/* Me and Work  */}
