@@ -18,6 +18,8 @@ import SearchData from "./Components/HomeOutComponents/FindJobs/FindJobs/SearchD
 import OneJobView from "./Components/HomeOutComponents/FindJobs/Jobs/OneJobView";
 import SuccesfulSubmit from "./Components/HomeOutComponents/FindJobs/Jobs/SuccesfulSubmit";
 import Applying from "./Components/HomeOutComponents/JobSeeker/JobSeekerProfile/Applying/Applying";
+import EmployerLayout from "./Components/HomeOutComponents/Employer/EmployerLayout/EmployerLayout";
+import EmployerProfile from "./Components/HomeOutComponents/Employer/EmployerProfile/EmployerProfile";
 
 export const router = createBrowserRouter([
   {
@@ -128,4 +130,16 @@ export const router = createBrowserRouter([
       },
     ],
   },
+  //  Employer Layout and start components 
+  {
+    path: "/employer",
+    element: <EmployerLayout></EmployerLayout>,
+    children: [
+       {
+          path:"/employer",
+          element: <EmployerProfile></EmployerProfile>
+       }
+    ]
+  }
+
 ]);
