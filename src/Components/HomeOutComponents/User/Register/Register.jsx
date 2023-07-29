@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
 import { createContextUser } from "../../../Sheared/Context/FullAppContext";
+import { Link } from "react-router-dom";
 
 const Register = () => {
   const { newUserCreate, user } = useContext(createContextUser);
@@ -187,6 +188,16 @@ const Register = () => {
             />
           </div>
         </form>
+
+
+
+        <p className="mt-3">Already have your Account ? 
+           <Link to='/login' className='uppercase text-[#0983C0] ml-2  mr-3'>Login</Link>
+
+           </p>
+
+
+
       </div>
     </div>
   );

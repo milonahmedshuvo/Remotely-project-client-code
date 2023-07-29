@@ -34,9 +34,11 @@ const SingleCompany = ({ companyData }) => {
             <Link to={`/DainamicRoute/${_id}`}>Explore</Link>
             
           </span>
-          <span className="text-sm hover:text-[#305393] hover:font-semibold">
-            Open Jobs
-          </span>
+          <Link to={`/DainamicRoute/${_id}/${companyName}`}>
+            <span className="text-sm hover:text-[#305393] hover:font-semibold">
+              Open Jobs
+            </span>
+          </Link>
         </div>
       </div>
     </div>

@@ -2,12 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const SixSingle = ({ companyData }) => {
-  
   const { companyName, profilePic, coverpic, sortAddress, indrustyType, _id } =
     companyData;
 
   return (
-    <div  className="">
+    <div className="">
       <div className="border border-[#DEE0E3] border-1 shadow-sm relative mt-12">
         <div className="flex justify-center">
           <img className="w-full h-[170px]" src={coverpic} alt="" />
@@ -31,15 +30,16 @@ const SixSingle = ({ companyData }) => {
 
         <div className="py-2 px-3 border border-[#D3D3D3] mb-4 rounded-3xl mx-auto w-1/2">
           <Link to={`/DainamicRoute/${_id}`}>
-          <span className="mr-2 text-sm pr-2 border-r-2 hover:text-[#305393] hover:font-semibold">
-            Explore
-          </span>
+            <span className="mr-2 text-sm pr-2 border-r-2 hover:text-[#305393] hover:font-semibold">
+              Explore
+            </span>
           </Link>
-          <span className="text-sm hover:text-[#305393] hover:font-semibold">
-           
-          Open Jobs
 
-          </span>
+          <Link to={`/DainamicRoute/${_id}/${companyName}`}>
+            <span className="text-sm hover:text-[#305393] hover:font-semibold">
+              Open Jobs
+            </span>
+          </Link>
         </div>
       </div>
     </div>

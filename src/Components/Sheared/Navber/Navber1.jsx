@@ -4,7 +4,7 @@ import { createContextUser } from '../Context/FullAppContext'
 import { toast } from 'react-hot-toast'
 
 const Navber1 = () => {
-      const {userSingOut}= useContext(createContextUser)
+      const {userSingOut, user}= useContext(createContextUser)
 
       const handleSingOut =()=> {
          userSingOut()
@@ -55,9 +55,15 @@ const Navber1 = () => {
   <div className="navbar-end">
     {/* <a className="btn">Button</a> */}
 
-    <Link to='/register' className='uppercase text-[#0983C0]  mr-3'>Register</Link>
-    <Link to="/login" className='uppercase text-[#0983C0] mr-3 text'>Login</Link>
-    <Link to="/" onClick={handleSingOut} className='uppercase text-[#0983C0] text'>SingOut</Link>
+    {user?.email?  
+    <Link to="/" onClick={handleSingOut} className='uppercase font-medium text-[#0983C0] text'>SingOut</Link>  : 
+    <Link to="/login" className='uppercase text-[#0983C0] mr-3 text font-medium'>Login</Link>
+    
+  }
+    
+  {/* <Link to='/register' className='uppercase text-[#0983C0]  mr-3'>Register</Link> */}
+    
+
   </div>
 </div>
   )

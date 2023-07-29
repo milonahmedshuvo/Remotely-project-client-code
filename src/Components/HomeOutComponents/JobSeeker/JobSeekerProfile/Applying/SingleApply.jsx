@@ -1,11 +1,25 @@
-import React from "react";
+import React, { useReducer } from "react";
+import { toast } from "react-hot-toast";
 
-const SingleApply = ({ apply }) => {
+const SingleApply = ({ apply,refetch }) => {
   const { jobTitle, companyName, drescription, jobSkills, _id } = apply;
+  const [ignored, forceUpdate] = useReducer(x => x + 1, 0);
   
   const handleDelete = (id) => {
-    // event.preventDefault()
-    console.log("click", id)
+       fetch(`http://localhost:5000/applyingDelete/${id}`, {
+        method:"DELETE"
+       })
+       .then((res)=> res.json())
+       .then((data)=>{
+        console.log(data)
+        toast.success("Delete Succesful")
+        refetch()
+       })
+       .catch((err)=> {
+        console.log(err)
+        toast.error("Sorry, Delete Field")
+       })
+
   }
 
 
