@@ -5,13 +5,17 @@ import { useContext } from "react";
 import { createContextUser } from "../../../Sheared/Context/FullAppContext";
 import { useQuery } from "@tanstack/react-query";
 import { Outlet } from "react-router-dom";
+import Loading from "../../../Sheared/Loading";
+
+
 
 const JobSeekerProfile = () => {
     const {user, loading }= useContext(createContextUser)
     
     if(loading){
-      return <h1>jobSeeker profile loading...</h1>
+      return <Loading></Loading>
     }
+
 
     
       const {data , isLoading, refetch }= useQuery({
@@ -24,7 +28,7 @@ const JobSeekerProfile = () => {
       })
 
       if(isLoading){
-        return <h1>data</h1>
+        return <Loading></Loading>
       }
 
       
