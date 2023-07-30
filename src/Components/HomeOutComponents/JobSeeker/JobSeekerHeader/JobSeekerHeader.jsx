@@ -52,13 +52,16 @@ const JobSeekerHeader = () => {
               <p className="text-white  ">Home</p>
             </div>
           </Link>
+  
 
+           <Link to="/jobSeeker/employerJobpost">    
           <div className="flex flex-col items-center  mr-3">
             <p className="text-white text-xl">
               <FaUserFriends></FaUserFriends>{" "}
             </p>
-            <p className="text-white ">Network</p>
+            <p className="text-white ">Employer Post</p>
           </div>
+          </Link>
 
           <Link to="/jobSeeker/ddd">
             <div className="flex flex-col items-center  mr-3">
@@ -69,13 +72,7 @@ const JobSeekerHeader = () => {
             </div>
           </Link>
 
-          <div className="flex flex-col items-center  mr-3">
-            <p className="text-white text-xl">
-              <FaBell></FaBell>{" "}
-            </p>
-            <p className="text-white ">Notifications</p>
-          </div>
-        </div>
+         
 
         <Link to="/jobSeeker/applying">
           <div className="flex flex-col items-center   mr-3">
@@ -85,6 +82,17 @@ const JobSeekerHeader = () => {
             <p className="text-white ">Apply</p>
           </div>
         </Link>
+
+
+
+        <div className="flex flex-col items-center  mr-3">
+            <p className="text-white text-xl">
+              <FaBell></FaBell>{" "}
+            </p>
+            <p className="text-white ">Notifications</p>
+          </div>
+        </div>
+
 
         {/* Me and Work  */}
 

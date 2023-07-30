@@ -21,6 +21,7 @@ import Applying from "./Components/HomeOutComponents/JobSeeker/JobSeekerProfile/
 import EmployerLayout from "./Components/HomeOutComponents/Employer/EmployerLayout/EmployerLayout";
 import EmployerProfile from "./Components/HomeOutComponents/Employer/EmployerProfile/EmployerProfile";
 import EmployerJobPost from "./Components/HomeOutComponents/Employer/EmployerJobPost/EmployerJobPost";
+import EmployerPost from "./Components/HomeOutComponents/JobSeeker/EmployerPost/EmployerPost";
 
 export const router = createBrowserRouter([
   {
@@ -126,6 +127,10 @@ export const router = createBrowserRouter([
           {
             path: "/jobSeeker/applying",
             element: <Applying></Applying>
+          },
+          {
+             path: "/jobSeeker/employerJobpost",
+             element: <EmployerPost></EmployerPost>
           }
         ],
       },
