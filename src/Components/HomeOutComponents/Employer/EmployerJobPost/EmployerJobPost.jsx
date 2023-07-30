@@ -28,6 +28,7 @@ const EmployerJobPost = () => {
          employerPost.map((post) => <JobPost
          key={post._id}
          post={post}
+         refetch={refetch}
          ></JobPost>)
        }
     </div>
