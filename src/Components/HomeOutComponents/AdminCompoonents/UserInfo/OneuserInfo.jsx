@@ -2,11 +2,9 @@ import React from "react";
 import { toast } from "react-hot-toast";
 
 const OneuserInfo = ({ user }) => {
-  console.log(user);
   const { image, userIdentity, userName, _id } = user;
 
   const handleUserDelete = (id) => {
-    console.log("click");
     fetch(`http://localhost:5000/userDelete/${id}`)
       .then((res) => res.json())
       .then((data) => {
