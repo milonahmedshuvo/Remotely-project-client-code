@@ -4,7 +4,7 @@ const OneuserInfo = ({user}) => {
       console.log(user)
       const {image,userIdentity,userName,_id} = user;
 
-      const handleUserDelete = () => {
+      const handleUserDelete = (id) => {
         console.log("click")
       }
 
