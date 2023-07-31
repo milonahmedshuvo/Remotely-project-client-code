@@ -75,7 +75,7 @@ const AdminHeader = () => {
             </div>
           </Link>
 
-          <Link to="">
+          <Link to="/admin/employerpost">
             <div className="flex flex-col items-center   mr-3">
               <p className="text-white text-xl ">
                 <FaIdCard></FaIdCard>{" "}

@@ -1,9 +1,25 @@
 import React from 'react'
+import { toast } from 'react-hot-toast';
 
 const Jobpost = ({job, refetch}) => {
       console.log("jobdd", job)
-      const {companyName,drescription,drescriptionTwo, jobSkills,location,jobTitle}= job;
-
+      const {companyName,drescription,drescriptionTwo, jobSkills,location,jobTitle,_id}= job;
+ 
+      const handlePostDelet = (id) => {
+        fetch(`http://localhost:5000/postDelete/${id}`,{
+            method: "DELETE"
+        })
+        .then((res) => res.json())
+        .then((data)=> {
+            console.log(data)
+            toast.success("succesfull Delete")
+            refetch()
+        })
+        .catch((er)=> {
+            console.log(er)
+            toast.error("Field delete")
+        })
+      }
   return (
     <div>
            <div className='mt-16'>
@@ -18,7 +34,9 @@ const Jobpost = ({job, refetch}) => {
                   <p>{drescriptionTwo}</p>
 
                   <div className='mt-3'>
-                    <button className='btn btn-error btn-sm '>Delete</button>
+                    <button
+                    onClick={() => handlePostDelet(_id)}
+                    className='btn btn-error btn-sm '>Delete</button>
                   </div>
            </div>
     </div>

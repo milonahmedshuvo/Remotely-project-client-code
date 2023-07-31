@@ -25,6 +25,7 @@ import EmployerPost from "./Components/HomeOutComponents/JobSeeker/EmployerPost/
 import AdminLayout from "./Components/HomeOutComponents/AdminCompoonents/AdminLayout/AdminLayout";
 import UserInfo from "./Components/HomeOutComponents/AdminCompoonents/UserInfo/UserInfo";
 import AlljobPost from "./Components/HomeOutComponents/AdminCompoonents/AlljobPost/AlljobPost";
+import AdminEmployerPost from "./Components/HomeOutComponents/AdminCompoonents/EmployerPost/AdminEmployerPost";
 
 export const router = createBrowserRouter([
   {
@@ -170,6 +171,10 @@ export const router = createBrowserRouter([
          {
             path: "/admin/alljob",
             element: <AlljobPost></AlljobPost>
+         },
+         {
+            path: "/admin/employerpost",
+            element: <AdminEmployerPost></AdminEmployerPost>
          }
       ]
   }
