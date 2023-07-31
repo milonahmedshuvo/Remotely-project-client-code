@@ -23,7 +23,7 @@ const FindJobs = () => {
     event.preventDefault()
     const jobTitle = event.target.jobPossition.value
     const company = event.target.company.value
-    console.log("clickkkkkkkkkkkkkkkk")
+    
 
     fetch(`http://localhost:5000/jobSerchFilter?company=${company}&job=${jobTitle}`)
     .then((res) => res.json())
