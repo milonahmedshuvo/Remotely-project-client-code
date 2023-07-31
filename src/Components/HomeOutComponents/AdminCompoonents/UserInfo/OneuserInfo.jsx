@@ -1,6 +1,7 @@
 import React from "react";
 import { toast } from "react-hot-toast";
 
+
 const OneuserInfo = ({ user }) => {
   const { image, userIdentity, userName, _id } = user;
 
@@ -16,6 +17,8 @@ const OneuserInfo = ({ user }) => {
       });
   };
 
+
+  
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 my-4 ">
       <img className="rounded-full  h-10 w-10 mx-auto " src={image} alt="" />
