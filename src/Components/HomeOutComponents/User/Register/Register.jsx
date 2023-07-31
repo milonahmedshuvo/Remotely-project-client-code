@@ -42,6 +42,7 @@ const Register = () => {
                 image: imageData.data.url,
                 cover:"https://i.ibb.co/TbZNmCg/banner.jpg"
               };
+              
               handleSaveUserData(newUserData);
             }
           })
