@@ -2,7 +2,11 @@ import React from 'react'
 
 const OneuserInfo = ({user}) => {
       console.log(user)
-      const {image,userIdentity,userName} = user;
+      const {image,userIdentity,userName,_id} = user;
+
+      const handleUserDelete = () => {
+        console.log("click")
+      }
 
   return (
     <div className='grid grid-cols-2 md:grid-cols-4 my-4 '>
@@ -20,7 +24,9 @@ const OneuserInfo = ({user}) => {
           </div>
 
           <div className='mx-auto'>
-          <button className="btn btn-sm btn-error">Delete</button>
+          <button 
+           onClick={handleUserDelete}
+          className="btn btn-sm btn-error">Delete</button>
           </div>
     </div>
   )
