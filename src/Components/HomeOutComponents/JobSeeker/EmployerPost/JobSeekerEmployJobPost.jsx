@@ -1,6 +1,10 @@
 import React from "react";
+import { useState } from "react";
+import { toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const JobSeekerEmployJobPost = ({ post }) => {
+   
   const {
     address,
     company,
@@ -11,7 +15,17 @@ const JobSeekerEmployJobPost = ({ post }) => {
     userName,
     userIdentity,
   } = post;
-  console.log(post);
+  const navigate = useNavigate()
+
+
+   
+
+
+  const handleApply = () => {
+        
+        toast.success("Your application successful")   
+        navigate("/succesfulSubmit")
+  }
 
   return (
     <div className="mx-4 my-16">
@@ -38,7 +52,11 @@ const JobSeekerEmployJobPost = ({ post }) => {
           </span>
         ))}
       </div>
-      <button className="btn btn-outline btn-success font-bold mt-4 btn-sm">
+      <button
+      
+       onClick={handleApply}
+       
+       className="btn btn-outline btn-success font-bold mt-4 btn-sm">
         Apply
       </button>
     </div>

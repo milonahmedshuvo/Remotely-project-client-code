@@ -28,7 +28,7 @@ const FindJobs = () => {
     fetch(`http://localhost:5000/jobSerchFilter?company=${company}&job=${jobTitle}`)
     .then((res) => res.json())
     .then((data) => {
-      console.log("Database Response ", data)
+      
       setSearchData(data)
       navigate("/findjobs/searchDataShow")
       

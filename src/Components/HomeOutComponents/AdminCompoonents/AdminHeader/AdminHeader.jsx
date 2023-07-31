@@ -1,43 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import {
-  FaUserAlt,
-  FaUserFriends,
-  FaBell,
-  FaIdCard,
-  FaMoneyCheck,
-  FaHome,
-} from "react-icons/fa";
-import { createContextUser } from "../../../Sheared/Context/FullAppContext";
-import Loading from "../../../Sheared/Loading";
-import { useQuery } from "@tanstack/react-query";
-import { useContext } from "react";
+    FaUserAlt,
+    FaUserFriends,
+    FaBell,
+    FaIdCard,
+    FaMoneyCheck,
+    FaHome,
+  } from "react-icons/fa";
 
 
 
-const JobSeekerHeader = () => {
-  const {user, loading }= useContext(createContextUser)
-    
-  if(loading){
-    return <Loading></Loading>
-  }
 
 
-  
-    const {data , isLoading, refetch }= useQuery({
-      queryKey: ["jobSeeker", user?.email],
-      queryFn: async () => {
-        const res = await fetch(`http://localhost:5000/userInfo?email=${user?.email}`);
-        const data= await res.json()
-        return data
-      }
-    })
-
-    if(isLoading){
-      return <Loading></Loading>
-    }
-
-    const { image } = data;
+const AdminHeader = () => {
   return (
     <div className="navbar bg-[#1D4354]">
       <div className="navbar-start">
@@ -80,57 +56,50 @@ const JobSeekerHeader = () => {
               <p className="text-white  ">Home</p>
             </div>
           </Link>
-  
 
-           <Link to="/jobSeeker/employerJobpost">    
-          <div className="flex flex-col items-center  mr-3">
-            <p className="text-white text-xl">
-              <FaUserFriends></FaUserFriends>{" "}
-            </p>
-            <p className="text-white ">Employer Post</p>
-          </div>
+          <Link to="/">
+            <div className="flex flex-col items-center  mr-3">
+              <p className="text-white text-xl">
+                <FaUserFriends></FaUserFriends>{" "}
+              </p>
+              <p className="text-white ">User</p>
+            </div>
           </Link>
 
-          <Link to="/jobSeeker/ddd">
+          <Link to="">
             <div className="flex flex-col items-center  mr-3">
               <p className="text-white text-xl">
                 <FaMoneyCheck></FaMoneyCheck>{" "}
               </p>
-              <p className="text-white ">My Post</p>
+              <p className="text-white ">Job Post</p>
             </div>
           </Link>
 
-         
+          <Link to="">
+            <div className="flex flex-col items-center   mr-3">
+              <p className="text-white text-xl ">
+                <FaIdCard></FaIdCard>{" "}
+              </p>
+              <p className="text-white ">Employers Job</p>
+            </div>
+          </Link>
 
-        <Link to="/jobSeeker/applying">
-          <div className="flex flex-col items-center   mr-3">
-            <p className="text-white text-xl ">
-              <FaIdCard></FaIdCard>{" "}
-            </p>
-            <p className="text-white ">Applying </p>
-          </div>
-        </Link>
-
-
-
-        <div className="flex flex-col items-center  mr-3">
+          {/* <div className="flex flex-col items-center  mr-3">
             <p className="text-white text-xl">
               <FaBell></FaBell>{" "}
             </p>
             <p className="text-white ">Notifications</p>
-          </div>
-        </div>
+          </div> */}
 
+
+
+        </div>
 
         {/* Me and Work  */}
 
         <div className="flex justify-between items-center">
           <div className="flex flex-col items-center px-4 lg:px-7  border-white border-r-2 ">
-            <img
-              className="rounded-full  h-10 w-10 "
-              src={image}
-              alt=""
-            />
+            <img className="rounded-full  h-10 w-10 " src="  " alt="" />
 
             <p className="text-white ">Me</p>
           </div>
@@ -148,4 +117,4 @@ const JobSeekerHeader = () => {
   );
 };
 
-export default JobSeekerHeader;
+export default AdminHeader;

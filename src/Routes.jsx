@@ -22,6 +22,8 @@ import EmployerLayout from "./Components/HomeOutComponents/Employer/EmployerLayo
 import EmployerProfile from "./Components/HomeOutComponents/Employer/EmployerProfile/EmployerProfile";
 import EmployerJobPost from "./Components/HomeOutComponents/Employer/EmployerJobPost/EmployerJobPost";
 import EmployerPost from "./Components/HomeOutComponents/JobSeeker/EmployerPost/EmployerPost";
+import AdminLayout from "./Components/HomeOutComponents/AdminCompoonents/AdminLayout/AdminLayout";
+import UserInfo from "./Components/HomeOutComponents/AdminCompoonents/UserInfo/UserInfo";
 
 export const router = createBrowserRouter([
   {
@@ -153,6 +155,18 @@ export const router = createBrowserRouter([
        },
        
     ]
+  },
+
+  // Admin layout and start components setup 
+  {
+      path: "/admin",
+      element: <AdminLayout></AdminLayout>,
+      children: [
+         {
+            path: "/admin",
+            element: <UserInfo></UserInfo>
+         }
+      ]
   }
 
 ]);

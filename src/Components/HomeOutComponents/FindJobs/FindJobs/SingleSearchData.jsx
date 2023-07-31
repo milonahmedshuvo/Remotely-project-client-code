@@ -19,7 +19,7 @@ import {
 import { Link } from "react-router-dom";
 
 const SingleSearchData = ({ job }) => {
-  console.log(job);
+  
   const {
     companyName,
     drescription,
