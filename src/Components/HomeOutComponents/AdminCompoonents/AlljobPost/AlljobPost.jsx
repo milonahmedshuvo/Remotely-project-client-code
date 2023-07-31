@@ -16,13 +16,13 @@ const AlljobPost = () => {
      if(isLoading){
         return <Loading></Loading>
      }
-     console.log(allPosts)
+     
 
 
 
   return (
-    <div>
-         <h1>all job posts</h1>
+    <div className=' mx-4 md:mx-20 lg:mx-40'>
+         
           {
             allPosts.map((job)=> <Jobpost
             key={job._id}
