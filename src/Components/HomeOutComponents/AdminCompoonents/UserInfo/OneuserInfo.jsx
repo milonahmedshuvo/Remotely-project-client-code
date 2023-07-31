@@ -24,7 +24,7 @@ const OneuserInfo = ({ user,refetch }) => {
 
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 my-4 ">
-      <img className="rounded-full  h-10 w-10 mx-auto " src={image} alt="" />
+      <img className="rounded-full  h-14 w-14 mx-auto " src={image} alt="" />
 
       <div>
         <p className="text-center">{userName}</p>

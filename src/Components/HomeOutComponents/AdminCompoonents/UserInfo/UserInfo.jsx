@@ -18,7 +18,7 @@ const UserInfo = () => {
        }
 
   return (
-    <div>
+    <div className='mt-16'>
          
 
          {

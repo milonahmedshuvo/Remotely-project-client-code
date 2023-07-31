@@ -57,7 +57,7 @@ const AdminHeader = () => {
             </div>
           </Link>
 
-          <Link to="/">
+          <Link to="/admin">
             <div className="flex flex-col items-center  mr-3">
               <p className="text-white text-xl">
                 <FaUserFriends></FaUserFriends>{" "}
@@ -66,7 +66,7 @@ const AdminHeader = () => {
             </div>
           </Link>
 
-          <Link to="">
+          <Link to="/admin/alljob">
             <div className="flex flex-col items-center  mr-3">
               <p className="text-white text-xl">
                 <FaMoneyCheck></FaMoneyCheck>{" "}
