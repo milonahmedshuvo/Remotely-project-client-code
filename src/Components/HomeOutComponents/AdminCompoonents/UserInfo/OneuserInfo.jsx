@@ -1,4 +1,5 @@
 import React from 'react'
+import { toast } from 'react-hot-toast';
 
 const OneuserInfo = ({user}) => {
       console.log(user)
@@ -6,6 +7,15 @@ const OneuserInfo = ({user}) => {
 
       const handleUserDelete = (id) => {
         console.log("click")
+        fetch(`http://localhost:5000/userDelete/${id}`)
+        .then((res)=> res.json())
+        .then((data)=> {
+          console.log(data)
+          toast.success("Delete Successful")
+        })
+        .catch((err)=> {
+          toast.error("Filed delete")
+        })
       }
 
   return (
