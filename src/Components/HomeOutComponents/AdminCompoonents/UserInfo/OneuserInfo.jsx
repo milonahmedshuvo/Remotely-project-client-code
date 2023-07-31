@@ -25,7 +25,7 @@ const OneuserInfo = ({user}) => {
 
           <div className='mx-auto'>
           <button 
-           onClick={handleUserDelete}
+           onClick={()=> handleUserDelete(_id)}
           className="btn btn-sm btn-error">Delete</button>
           </div>
     </div>
