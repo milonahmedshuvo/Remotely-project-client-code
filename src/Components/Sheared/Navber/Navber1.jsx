@@ -5,6 +5,7 @@ import { toast } from 'react-hot-toast'
 import useEmployer from '../../Hooks/useEmployer'
 import Loading from '../Loading'
 import useJobseeker from '../../Hooks/useJobseeker'
+import useAdmin from '../../Hooks/useAdmin'
 
 const Navber1 = () => {
       const {userSingOut,loading, user}= useContext(createContextUser)
@@ -13,6 +14,7 @@ const Navber1 = () => {
       }
       const [isEmployer] = useEmployer(user?.email)
       const [jobSeeker] = useJobseeker(user?.email)
+      const [isAdmin] = useAdmin(user?.email)
       
       const handleSingOut =()=> {
          userSingOut()
@@ -41,6 +43,9 @@ const Navber1 = () => {
 
      {
         jobSeeker &&  <Link to='/jobSeeker' className='uppercase font-medium  ml-2 text-lg text-[#0983C0]  mr-3'>Dashbord</Link>
+      }
+      {
+        isAdmin &&  <Link to='/admin' className='uppercase font-medium  ml-2 text-lg text-[#0983C0]  mr-3'>Dashbord</Link>
       }
 </>
 

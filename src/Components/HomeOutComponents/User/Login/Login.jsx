@@ -5,6 +5,8 @@ import { toast } from "react-hot-toast";
 import { Link, Navigate, useNavigate} from "react-router-dom";
 import useEmployer from "../../../Hooks/useEmployer";
 import Loading from "../../../Sheared/Loading";
+import useJobseeker from "../../../Hooks/useJobseeker";
+import useAdmin from "../../../Hooks/useAdmin";
 
 
 
@@ -14,6 +16,8 @@ const Login = () => {
     return <Loading></Loading>
   }
   const [isEmployer,loding] = useEmployer(user?.email)
+  const [jobSeeker] = useJobseeker(user?.email)
+  const [isAdmin] = useAdmin(user?.email)
   const navigate = useNavigate()
 //  console.log("employerrrrrrrrrrrrr",isEmployer)
   const {register,handleSubmit,watch,formState: { errors }} = useForm();
@@ -24,6 +28,13 @@ const Login = () => {
         navigate("/employer")
       }
 
+      if(jobSeeker){
+        navigate("/jobSeeker")
+      }
+
+      if(isAdmin){
+        navigate("/admin")
+      }
 
            const handleLoginForm = (data) => {
             console.log(data.email)
