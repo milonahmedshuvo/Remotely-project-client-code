@@ -59,6 +59,7 @@ const JobSeekerProfile = () => {
               <div className="mt-10">
                 <p className="text-center text-xl font-bold">{userName}</p>
                 <p className="text-center text-sm font-medium">{email}</p>
+                <p className="text-center text-sm">{userIdentity}</p>
                 <p className="text-center text-sm">{designation}</p>
                 <p className="text-center text-sm">{address}</p>
 

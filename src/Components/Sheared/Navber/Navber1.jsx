@@ -2,10 +2,18 @@ import React, { useContext } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { createContextUser } from '../Context/FullAppContext'
 import { toast } from 'react-hot-toast'
+import useEmployer from '../../Hooks/useEmployer'
+import Loading from '../Loading'
+import useJobseeker from '../../Hooks/useJobseeker'
 
 const Navber1 = () => {
-      const {userSingOut, user}= useContext(createContextUser)
-
+      const {userSingOut,loading, user}= useContext(createContextUser)
+      if(loading){
+        return <Loading></Loading>
+      }
+      const [isEmployer] = useEmployer(user?.email)
+      const [jobSeeker] = useJobseeker(user?.email)
+      
       const handleSingOut =()=> {
          userSingOut()
          .then((res)=>{
@@ -23,10 +31,17 @@ const Navber1 = () => {
     const manuItem = <>
      <Link to="/" className='text-lg font-medium uppercase ml-5 text-[#0983C0] '>Home</Link> 
      <Link to="/findjobs" className='text-lg font-medium uppercase ml-5 text-[#0983C0]'>Find Jobs</Link> 
-     <Link to="/sixcompany" className='text-lg font-medium uppercase ml-5 text-[#0983C0]'>Browse Companies</Link> 
-     <Link to="/" className='text-lg font-medium uppercase ml-5 text-[#0983C0]'>Career Advice</Link> 
+     <Link to="/sixcompany" className='text-lg font-medium uppercase ml-5 text-[#0983C0]'>Browse Companies</Link>  
      <Link to="/howcanhelp" className='text-lg font-medium uppercase ml-5 text-[#0983C0]'>Help Center</Link>
        
+
+      {
+        isEmployer &&  <Link to='/employer' className='uppercase font-medium  ml-2 text-lg text-[#0983C0]  mr-3'>Dashbord</Link>
+      }
+
+     {
+        jobSeeker &&  <Link to='/jobSeeker' className='uppercase font-medium  ml-2 text-lg text-[#0983C0]  mr-3'>Dashbord</Link>
+      }
 </>
 
 
@@ -40,6 +55,7 @@ const Navber1 = () => {
       <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2   w-52">
         
       { manuItem}
+      
       </ul>
     </div>
     <a className="btn btn-ghost normal-case text-xl">Remotely</a>
@@ -59,7 +75,9 @@ const Navber1 = () => {
     <Link to="/" onClick={handleSingOut} className='uppercase font-medium text-[#0983C0] text'>SingOut</Link>  : 
     <Link to="/login" className='uppercase text-[#0983C0] mr-3 text font-medium'>Login</Link>
     
-  }
+      }
+
+      
     
   {/* <Link to='/register' className='uppercase text-[#0983C0]  mr-3'>Register</Link> */}
     

@@ -2,17 +2,28 @@ import React, { useContext } from "react";
 import { createContextUser } from "../../../Sheared/Context/FullAppContext";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate} from "react-router-dom";
+import useEmployer from "../../../Hooks/useEmployer";
+import Loading from "../../../Sheared/Loading";
+
+
 
 const Login = () => {
-  const { user, userSingIn } = useContext(createContextUser);
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
- 
+  const { user,loading, userSingIn } = useContext(createContextUser);
+  if(loading){
+    return <Loading></Loading>
+  }
+  const [isEmployer,loding] = useEmployer(user?.email)
+  const navigate = useNavigate()
+//  console.log("employerrrrrrrrrrrrr",isEmployer)
+  const {register,handleSubmit,watch,formState: { errors }} = useForm();
+  
+     
+     console.log(isEmployer)
+      if(isEmployer){
+        navigate("/employer")
+      }
+
 
            const handleLoginForm = (data) => {
             console.log(data.email)
@@ -21,6 +32,7 @@ const Login = () => {
             .then((res) => {
               console.log(res)
               toast.success("Succesful user login..!!")
+             
             })
             .catch((err)=>{
               console.log(err)
@@ -28,13 +40,19 @@ const Login = () => {
             })
            }
 
+
+
+
+
+           
+           
   return (
     <div className="my-36">
       
 
-      <div className=" w-full lg:w-3/6 mx-auto md:pt-12 md:pb-24 md:px-20 px-5 bg-gradient-to-b from-indigo-400 rounded">
+      <div className=" w-full lg:w-3/6 mx-auto md:pt-12 md:pb-24 md:px-20 px-5 bg-gradient-to-b from-indigo-100 rounded">
 
-      <h1 className="text-3xl text-white text-center">Login Form</h1>
+      <h1 className="text-3xl text-[#0983C0] text-center">Login Form</h1>
 
 
         <form onSubmit={handleSubmit(handleLoginForm)} className="">
