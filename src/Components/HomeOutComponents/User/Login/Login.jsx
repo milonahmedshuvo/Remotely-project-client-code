@@ -38,7 +38,6 @@ const Login = () => {
           
 
 
-
            const navigate = useNavigate()
 
            const [isJobseeker] = uesJobseeker(user?.email)
