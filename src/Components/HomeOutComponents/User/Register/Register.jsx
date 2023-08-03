@@ -42,7 +42,7 @@ const Register = () => {
                 image: imageData.data.url,
                 cover:"https://i.ibb.co/TbZNmCg/banner.jpg"
               };
-              
+              console.log(newUserData)
               handleSaveUserData(newUserData);
             }
           })
@@ -55,6 +55,10 @@ const Register = () => {
         toast.error("Field to user create...!");
       });
   };
+
+
+
+  
 
   function handleSaveUserData(userData) {
     fetch("http://localhost:5000/newUserData", {

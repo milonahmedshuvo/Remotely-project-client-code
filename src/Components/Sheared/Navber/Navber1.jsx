@@ -2,19 +2,17 @@ import React, { useContext } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { createContextUser } from '../Context/FullAppContext'
 import { toast } from 'react-hot-toast'
-import useEmployer from '../../Hooks/useEmployer'
 import Loading from '../Loading'
-import useJobseeker from '../../Hooks/useJobseeker'
-import useAdmin from '../../Hooks/useAdmin'
+
 
 const Navber1 = () => {
       const {userSingOut,loading, user}= useContext(createContextUser)
       if(loading){
         return <Loading></Loading>
       }
-      const [isEmployer] = useEmployer(user?.email)
-      const [jobSeeker] = useJobseeker(user?.email)
-      const [isAdmin] = useAdmin(user?.email)
+    
+      // const [isEmployer] = useEmployer(user?.email)
+      // const [isAdmin] = useAdmin(user?.email)
       
       const handleSingOut =()=> {
          userSingOut()
@@ -37,16 +35,16 @@ const Navber1 = () => {
      <Link to="/howcanhelp" className='text-lg font-medium uppercase ml-5 text-[#0983C0]'>Help Center</Link>
        
 
-      {
+      {/* {
         isEmployer &&  <Link to='/employer' className='uppercase font-medium  ml-2 text-lg text-[#0983C0]  mr-3'>Dashbord</Link>
-      }
+      } */}
 
-     {
+     {/* {
         jobSeeker &&  <Link to='/jobSeeker' className='uppercase font-medium  ml-2 text-lg text-[#0983C0]  mr-3'>Dashbord</Link>
-      }
-      {
+      } */}
+      {/* {
         isAdmin &&  <Link to='/admin' className='uppercase font-medium  ml-2 text-lg text-[#0983C0]  mr-3'>Dashbord</Link>
-      }
+      } */}
 </>
 
 

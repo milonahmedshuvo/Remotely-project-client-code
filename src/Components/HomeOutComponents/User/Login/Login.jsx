@@ -1,40 +1,23 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { createContextUser } from "../../../Sheared/Context/FullAppContext";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { Link, Navigate, useNavigate} from "react-router-dom";
-import useEmployer from "../../../Hooks/useEmployer";
 import Loading from "../../../Sheared/Loading";
-import useJobseeker from "../../../Hooks/useJobseeker";
-import useAdmin from "../../../Hooks/useAdmin";
+import { useQuery } from "@tanstack/react-query";
+import uesJobseeker from "../../../Hooks/uesJobseeker";
 
 
 
 const Login = () => {
   const { user,loading, userSingIn } = useContext(createContextUser);
+
   if(loading){
     return <Loading></Loading>
   }
-  const [isEmployer,loding] = useEmployer(user?.email)
-  const [jobSeeker] = useJobseeker(user?.email)
-  const [isAdmin] = useAdmin(user?.email)
-  const navigate = useNavigate()
-//  console.log("employerrrrrrrrrrrrr",isEmployer)
+
   const {register,handleSubmit,watch,formState: { errors }} = useForm();
   
-     
-     console.log(isEmployer)
-      if(isEmployer){
-        navigate("/employer")
-      }
-
-      if(jobSeeker){
-        navigate("/jobSeeker")
-      }
-
-      if(isAdmin){
-        navigate("/admin")
-      }
 
            const handleLoginForm = (data) => {
             console.log(data.email)
@@ -51,10 +34,22 @@ const Login = () => {
             })
            }
 
+           console.log("email", user?.email)
+          
 
 
 
+           const navigate = useNavigate()
 
+           const [isJobseeker] = uesJobseeker(user?.email)
+           console.log(isJobseeker)
+           if(isJobseeker){
+            navigate('/jobSeeker')
+           }
+         
+
+           
+          
            
            
   return (
