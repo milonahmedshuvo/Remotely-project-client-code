@@ -26,4 +26,6 @@ const uesJobseeker = (email) => {
       
 }
 
+
+
 export default uesJobseeker
