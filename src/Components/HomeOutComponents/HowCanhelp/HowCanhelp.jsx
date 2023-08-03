@@ -37,6 +37,9 @@ const HowCanhelp = () => {
 
       //  console.log("query2", jobSeeker)
 
+        // get job seeker rule 
+
+
 
         useEffect(()=>{
             fetch(`http://localhost:5000/jobSeeker?email=${user?.email}`)
@@ -50,9 +53,15 @@ const HowCanhelp = () => {
 
 
 
+
+
+
+
+
+
   return (
     <div>
-        <h1 className='text-3xl font-bold text-center'>How can we help you?</h1>  
+        <h1 className='text-3xl font-bold text-purple-400 text-center'>How can we help you?</h1>  
     </div>
   )
 }
