@@ -58,7 +58,7 @@ const HowCanhelp = () => {
 
 
   return (
-    <div>
+    <div className='bg-[#A1E2EA] py-40'>
         <h1 className='text-3xl font-bold text-purple-400 text-center'>How can we help you?</h1>  
     </div>
   )

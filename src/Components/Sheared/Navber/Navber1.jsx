@@ -3,6 +3,11 @@ import { Link, NavLink } from 'react-router-dom'
 import { createContextUser } from '../Context/FullAppContext'
 import { toast } from 'react-hot-toast'
 import Loading from '../Loading'
+import rem from "../../../image/logo.png"
+import { useQuery } from '@tanstack/react-query'
+import useAdmin from '../../Hooks/useAdmin'
+import uesJobseeker from '../../Hooks/useJobseeker'
+import useEmployer from '../../Hooks/useEmployer'
 
 
 const Navber1 = () => {
@@ -11,9 +16,23 @@ const Navber1 = () => {
         return <Loading></Loading>
       }
     
-      // const [isEmployer] = useEmployer(user?.email)
-      // const [isAdmin] = useAdmin(user?.email)
       
+
+
+     const {data:alluserinfoOneData={}} = useQuery({
+      queryKey:["alluserinfoOneData", user?.email],
+      queryFn: async () => {
+        const res = await fetch(`http://localhost:5000/alluserinfoOneData?email=${user?.email}`)
+        const data= await res.json()
+        return data
+      }
+     })
+
+      const {image} = alluserinfoOneData
+
+    
+      
+
       const handleSingOut =()=> {
          userSingOut()
          .then((res)=>{
@@ -25,6 +44,12 @@ const Navber1 = () => {
          })
       }
 
+     
+
+      const [isAdmin] = useAdmin(user?.email)
+      const [isJobseeker] = uesJobseeker(user?.email)
+      const [isEmployer] = useEmployer(user?.email)
+
 
 
 
@@ -35,16 +60,16 @@ const Navber1 = () => {
      <Link to="/howcanhelp" className='text-lg font-medium  ml-5 text-[#FFFFFF]'>Help Center</Link>
        
 
-      {/* {
-        isEmployer &&  <Link to='/employer' className='uppercase font-medium  ml-2 text-lg text-[#0983C0]  mr-3'>Dashbord</Link>
-      } */}
+      {
+        isEmployer &&  <Link to='/employer' className='font-medium  ml-2 text-lg text-[#FFFFFF]  mr-3'>Dashbord</Link>
+      }
 
-     {/* {
-        jobSeeker &&  <Link to='/jobSeeker' className='uppercase font-medium  ml-2 text-lg text-[#0983C0]  mr-3'>Dashbord</Link>
-      } */}
-      {/* {
-        isAdmin &&  <Link to='/admin' className='uppercase font-medium  ml-2 text-lg text-[#0983C0]  mr-3'>Dashbord</Link>
-      } */}
+     {
+        isJobseeker &&  <Link to='/jobSeeker' className=' font-medium  ml-2 text-lg text-[#FFFFFF]   mr-3'>Dashbord</Link>
+      }
+      {
+        isAdmin &&  <Link to='/admin' className=' font-medium  ml-2 text-lg text-[#FFFFFF]  mr-3'>Dashbord</Link>
+      }
 </>
 
 
@@ -61,7 +86,10 @@ const Navber1 = () => {
       
       </ul>
     </div>
-    <a className="btn btn-ghost texxt-[#FFFFFF] normal-case text-xl">Remotely</a>
+    <a className=" text-[#C1FF72] font-serif text-2xl font-semibold uppercase">Remotely</a>
+   
+
+    {/* <img src={remotely} alt="" /> */}
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -81,8 +109,11 @@ const Navber1 = () => {
       }
 
       
+<img className="rounded-full mr-2 ml-2 h-10 w-10 " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2sl3kmWLEHd_w4_ez9nh-2BYZcSQ8GviTaA&usqp=CAU" alt="" />
+
+      
     
-  {/* <Link to='/register' className='uppercase text-[#FFFFFF]  mr-3'>Register</Link> */}
+  
     
 
   </div>
