@@ -59,7 +59,10 @@ const HowCanhelp = () => {
 
   return (
     <div className='bg-[#A1E2EA] py-40'>
-        <h1 className='text-3xl font-bold text-purple-400 text-center'>How can we help you?</h1>  
+        <h1 className='text-5xl font-bold text-[#0D3958] text-center'>How can we help you?</h1>  
+        <div className='flex justify-center'>
+        <input  type="text" placeholder="Search" className="input input-bordered w-1/2 mt-10 " />
+        </div>
     </div>
   )
 }

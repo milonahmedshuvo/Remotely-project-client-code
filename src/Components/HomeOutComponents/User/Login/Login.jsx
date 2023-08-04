@@ -68,6 +68,18 @@ const Login = () => {
            
   return (
     <div className="my-36">
+
+      <div className="mb-4">
+        <p className="text-center text-xl font-semibold">Job seeker role </p>
+        <p className="text-center">Email: jobseeker@gmail.com </p>
+        <p className="text-center">Password: 12345678</p>
+      </div>
+
+      <div className="mb-4">
+        <p className="text-center text-xl font-semibold">Employer role</p>
+        <p className="text-center">Email:   employer@gamil.com </p>
+        <p className="text-center">Password:   12345678 </p>
+      </div>
       
 
       <div className=" w-full lg:w-3/6 mx-auto md:pt-12 md:pb-24 md:px-20 px-5 bg-gradient-to-b from-indigo-100 rounded">

@@ -28,7 +28,7 @@ const EmployerHeader = () => {
     queryKey: ["employer", user?.email],
     queryFn: async () => {
         const res = await fetch(`http://localhost:5000/employer?email=${user?.email}`)
-        const data = res.json()
+        const data = await res.json()
         return data
     }
    })
