@@ -4,6 +4,8 @@ import { createContextUser } from '../../Sheared/Context/FullAppContext'
 import Loading from '../../Sheared/Loading'
 import { useQuery } from '@tanstack/react-query'
 import { useEffect } from 'react'
+import useEmployer from '../../Hooks/useEmployer'
+import useAdmin from '../../Hooks/useAdmin'
 
 
 
@@ -18,29 +20,20 @@ const HowCanhelp = () => {
 
       
 
-      const {data} = useQuery({
-        queryKey: ['getjobs', user?.email],
+      
+
+
+
+       const {data:jobSeeker={}} = useQuery ({
+        queryKey: ['jobSeeker'],
         queryFn: async () => {
-          const res = await fetch(`http://localhost:5000/getjobs?email=${user?.email}`)
-          const data = await res.json()
-          return data
+           const res = await fetch(`http://localhost:5000/jobSeeker?email=${user?.email}`)
+           const data = await res.json()
+           return data
         }
-      })
+       })
 
-      console.log("query data:", data)
-
-
-
-      //  const {data:jobSeeker={}} = useQuery ({
-      //   queryKey: ['jobSeeker'],
-      //   queryFn: async () => {
-      //      const res = await fetch(`http://localhost:5000/jobSeeker?email=${user?.email}`)
-      //      const data = await res.json()
-      //      return data
-      //   }
-      //  })
-
-      //  console.log("query2", jobSeeker)
+       console.log("query2", jobSeeker)
 
         // get job seeker rule 
 
@@ -55,7 +48,12 @@ const HowCanhelp = () => {
       
 
         
+           
+        const [isEmployer] = useEmployer(user?.email)
+        console.log("login page employer :", isEmployer)
 
+        const [isAdmin] = useAdmin(user?.email)
+        console.log("can i help admin hook:", isAdmin)
 
 
 

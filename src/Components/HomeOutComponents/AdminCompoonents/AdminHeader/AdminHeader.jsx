@@ -24,21 +24,21 @@ const AdminHeader = () => {
   }
 
 
-//   const {data, isLoading, refetch}=useQuery({
-//     queryKey: ["admin", user?.email],
-//     queryFn: async () => {
-//       const res = await fetch(`http://localhost:5000/getAdminUser?email=${user?.email}`)
-//       const data = await res.json()
-//       return data
-//     }
-//   })
+  const {data, isLoading, refetch}=useQuery({
+    queryKey: ["admin", user?.email],
+    queryFn: async () => {
+      const res = await fetch(`http://localhost:5000/getAdminUser?email=${user?.email}`)
+      const data = await res.json()
+      return data
+    }
+  })
 
-//     if(isLoading){
-//       return <Loading></Loading>
-//     }
+    if(isLoading){
+      return <Loading></Loading>
+    }
 
-//  console.log("admin", data)
-//   const {image} =data
+ console.log("admin", data)
+  const {image} =data
   
 
 
@@ -131,7 +131,7 @@ const AdminHeader = () => {
 
         <div className="flex justify-between items-center">
           <div className="flex flex-col items-center px-4 lg:px-7  border-white border-r-2 ">
-            <img className="rounded-full  h-10 w-10 " src=" " alt="" />
+            <img className="rounded-full  h-10 w-10 " src={image} alt="" />
 
             <p className="text-white ">Me</p>
           </div>

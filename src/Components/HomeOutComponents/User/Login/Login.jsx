@@ -5,7 +5,9 @@ import { toast } from "react-hot-toast";
 import { Link, Navigate, useNavigate} from "react-router-dom";
 import Loading from "../../../Sheared/Loading";
 import { useQuery } from "@tanstack/react-query";
-import uesJobseeker from "../../../Hooks/uesJobseeker";
+import useJobseeker from "../../../Hooks/useJobseeker";
+import useEmployer from "../../../Hooks/useEmployer";
+import useAdmin from "../../../Hooks/useAdmin";
 
 
 
@@ -40,13 +42,26 @@ const Login = () => {
 
            const navigate = useNavigate()
 
-           const [isJobseeker] = uesJobseeker(user?.email)
+          //  i have created jobseeker role custom hook 
+           const [isJobseeker] = useJobseeker(user?.email)
            console.log(isJobseeker)
            if(isJobseeker){
             navigate('/jobSeeker')
            }
          
+          //  i have created employer role custom hook 
+           const [isEmployer] = useEmployer(user?.email)
+           if(isEmployer){
+            navigate("/employer")
+           }
 
+            //  i have created admin role custom hook
+            const [isAdmin] = useAdmin(user?.email)
+            if(isAdmin){
+              navigate("/admin")
+            } 
+
+        
            
           
            
