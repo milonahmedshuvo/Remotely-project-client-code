@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <div >
-      <footer className="footer p-10 bg-[#1F69CA] text-white py-14 ">
+      <footer className="footer p-10 bg-[#1F69CA] text-white pt-14 ">
         <div>
             <img src="https://softzino.com/images/icon-white.png" alt="" />
             <p className="text-[16px] mt-4">Since our establishment, we have</p>
@@ -54,7 +54,11 @@ const Footer = () => {
       </footer>
         
       
+       <div className="bg-[#1F69CA] pb-20">
+        <hr></hr>
+        <h1 className="font-semibold text-center text-lg text-white mt-3">Copyright © 2023 Softzino Technologies</h1>
 
+       </div>
       
     </div>
   );
