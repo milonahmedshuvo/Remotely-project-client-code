@@ -86,10 +86,10 @@ const Navber1 = () => {
       
       </ul>
     </div>
-    <a className=" text-[#C1FF72] font-serif text-2xl font-semibold uppercase">Remotely</a>
+    {/* <a className=" text-[#C1FF72] font-serif text-2xl font-semibold uppercase">Remotely</a> */}
    
 
-    {/* <img src={remotely} alt="" /> */}
+    <img src="https://softzino.com/images/icon-white.png" alt="" />
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
