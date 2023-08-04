@@ -2,11 +2,31 @@ import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
 import { createContextUser } from "../../../Sheared/Context/FullAppContext";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import uesJobseeker from "../../../Hooks/useJobseeker";
+import useEmployer from "../../../Hooks/useEmployer";
+import Loading from "../../../Sheared/Loading";
 
 const Register = () => {
-  const { newUserCreate, user } = useContext(createContextUser);
-  
+  const { newUserCreate, user,loading } = useContext(createContextUser);
+  if(loading){
+    return <Loading></Loading>
+  }
+
+
+  // const navigate = useNavigate()
+  // //  condition job seeker role plaly 
+  // const [isJobseeker] = uesJobseeker(user?.email)
+  // if(isJobseeker){
+  //     navigate("/jobSeeker")
+  // }
+
+
+  // // condition employer role playing 
+  // const [isEmployer] = useEmployer(user?.email)
+  // if(isEmployer){
+  //   navigate("/employer")
+  // }
 
   const {
     register,
@@ -69,7 +89,10 @@ const Register = () => {
       body: JSON.stringify(userData),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data))
+      .then((data) => {
+        console.log(data)
+        
+      })
       .catch((err) => console.log(err));
   }
 
@@ -86,6 +109,12 @@ const Register = () => {
 
   // const result= dateFormate(date)
   // console.log("dddddddddddddddddddddd", result)
+
+
+   
+
+
+
 
   return (
     <div className="mt-16 mb-28  ">

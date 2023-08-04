@@ -29,10 +29,10 @@ const Navber1 = () => {
 
 
     const manuItem = <>
-     <Link to="/" className='text-lg font-medium uppercase ml-5 text-[#0983C0] '>Home</Link> 
-     <Link to="/findjobs" className='text-lg font-medium uppercase ml-5 text-[#0983C0]'>Find Jobs</Link> 
-     <Link to="/sixcompany" className='text-lg font-medium uppercase ml-5 text-[#0983C0]'>Browse Companies</Link>  
-     <Link to="/howcanhelp" className='text-lg font-medium uppercase ml-5 text-[#0983C0]'>Help Center</Link>
+     <Link to="/" className='text-lg font-medium  ml-5 text-[#FFFFFF] '>Home</Link> 
+     <Link to="/findjobs" className='text-lg font-medium  ml-5 text-[#FFFFFF]'>Find Jobs</Link> 
+     <Link to="/sixcompany" className='text-lg font-medium  ml-5 text-[#FFFFFF]'>Browse Companies</Link>  
+     <Link to="/howcanhelp" className='text-lg font-medium  ml-5 text-[#FFFFFF]'>Help Center</Link>
        
 
       {/* {
@@ -49,7 +49,7 @@ const Navber1 = () => {
 
 
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-[#0983C0] sticky top-0 z-30 ">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -61,7 +61,7 @@ const Navber1 = () => {
       
       </ul>
     </div>
-    <a className="btn btn-ghost normal-case text-xl">Remotely</a>
+    <a className="btn btn-ghost texxt-[#FFFFFF] normal-case text-xl">Remotely</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -75,14 +75,14 @@ const Navber1 = () => {
     {/* <a className="btn">Button</a> */}
 
     {user?.email?  
-    <Link to="/" onClick={handleSingOut} className='uppercase font-medium text-[#0983C0] text'>SingOut</Link>  : 
-    <Link to="/login" className='uppercase text-[#0983C0] mr-3 text font-medium'>Login</Link>
+    <Link to="/" onClick={handleSingOut} className='uppercase font-medium text-[#FFFFFF] text'>SingOut</Link>  : 
+    <Link to="/login" className='uppercase text-[#FFFFFF] mr-3 text font-medium'>Login</Link>
     
       }
 
       
     
-  {/* <Link to='/register' className='uppercase text-[#0983C0]  mr-3'>Register</Link> */}
+  {/* <Link to='/register' className='uppercase text-[#FFFFFF]  mr-3'>Register</Link> */}
     
 
   </div>
