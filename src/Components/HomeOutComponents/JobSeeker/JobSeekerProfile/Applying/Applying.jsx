@@ -16,7 +16,7 @@ const Applying = () => {
       } 
 
     // useEffect(() =>{
-    //     fetch(`http://localhost:5000/applyingDataByEmail?email=${user?.email}`)
+    //     fetch(`https://remotely-project-server.vercel.app/applyingDataByEmail?email=${user?.email}`)
     //     .then((res) => res.json())
     //     .then((data) =>{
     //         setApplying(data)
@@ -27,7 +27,7 @@ const Applying = () => {
     const {data:applying=[], isLoading, refetch} = useQuery({
         queryKey: ['applying', user?.email],
         queryFn: async ( ) => {
-            const res = await fetch(`http://localhost:5000/applyingDataByEmail?email=${user?.email}`)
+            const res = await fetch(`https://remotely-project-server.vercel.app/applyingDataByEmail?email=${user?.email}`)
             const data = res.json()
             return data
         }

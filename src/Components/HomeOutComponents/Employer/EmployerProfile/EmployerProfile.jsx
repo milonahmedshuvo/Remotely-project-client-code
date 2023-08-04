@@ -21,11 +21,12 @@ const EmployerProfile = () => {
    const {data, isLoading } = useQuery({
     queryKey: ["employer", user?.email],
     queryFn: async () => {
-        const res = await fetch(`http://localhost:5000/employer?email=${user?.email}`)
+        const res = await fetch(`https://remotely-project-server.vercel.app/employer?email=${user?.email}`)
         const data = res.json()
         return data
     }
    })
+
 
   if (isLoading) {
     return <Loading></Loading>;
@@ -34,6 +35,7 @@ const EmployerProfile = () => {
   const { userName, email, address, cover, image, userIdentity, designation }=data;
     
 
+  
   return (
     <div className="flex flex-col md:flex-row gap-2 lg:gap-6 lg:px-20 bg-[#E2E4E6] ">
       <div className=" w-full md:w-1/3 lg:w-1/4 bg-[#FFFFFF]">

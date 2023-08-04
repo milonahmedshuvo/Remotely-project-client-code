@@ -6,7 +6,7 @@ const OneuserInfo = ({ user,refetch }) => {
   const { image, userIdentity, userName, _id } = user;
 
   const handleUserDelete = (id) => {
-    fetch(`http://localhost:5000/userDelete/${id}`,{
+    fetch(`https://remotely-project-server.vercel.app/userDelete/${id}`,{
       method: "DELETE"
     })
       .then((res) => res.json())

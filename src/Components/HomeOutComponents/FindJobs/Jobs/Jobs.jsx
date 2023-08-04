@@ -9,7 +9,7 @@ const Jobs = () => {
   const { data: alljobs = [], isLoading } = useQuery({
     queryKey: ["alljobs"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/alljobs");
+      const res = await fetch("https://remotely-project-server.vercel.app/alljobs");
       const data = await res.json();
       return data;
     },

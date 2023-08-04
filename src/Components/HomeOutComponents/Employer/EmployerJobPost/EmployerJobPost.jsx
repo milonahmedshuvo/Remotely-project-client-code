@@ -8,7 +8,7 @@ const EmployerJobPost = () => {
       const {data:employerPost=[], isLoading, refetch} = useQuery({
         queryKey: ["employerPost"],
         queryFn: async () => {
-          const res = await fetch("http://localhost:5000/employerJobPost")
+          const res = await fetch("https://remotely-project-server.vercel.app/employerJobPost")
           const data = res.json()
           return data
          }

@@ -8,7 +8,7 @@ const UserInfo = () => {
     const {data:userInfo=[], refetch, isLoading}= useQuery({
         queryKey: ["userInfo"],
         queryFn: async () => {
-            const res = await fetch("http://localhost:5000/userInfoAlldata")
+            const res = await fetch("https://remotely-project-server.vercel.app/userInfoAlldata")
             const data = await res.json()
             return data
         }

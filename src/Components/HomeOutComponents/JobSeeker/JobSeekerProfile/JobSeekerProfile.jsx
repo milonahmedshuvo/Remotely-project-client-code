@@ -21,7 +21,7 @@ const JobSeekerProfile = () => {
       const {data , isLoading, refetch }= useQuery({
         queryKey: ["jobSeeker", user?.email],
         queryFn: async () => {
-          const res = await fetch(`http://localhost:5000/userInfo?email=${user?.email}`);
+          const res = await fetch(`https://remotely-project-server.vercel.app/userInfo?email=${user?.email}`);
           const data= await res.json()
           return data
         }

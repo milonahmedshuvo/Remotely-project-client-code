@@ -27,7 +27,7 @@ const EmployerHeader = () => {
    const {data, isLoading } = useQuery({
     queryKey: ["employer", user?.email],
     queryFn: async () => {
-        const res = await fetch(`http://localhost:5000/employer?email=${user?.email}`)
+        const res = await fetch(`https://remotely-project-server.vercel.app/employer?email=${user?.email}`)
         const data = await res.json()
         return data
     }

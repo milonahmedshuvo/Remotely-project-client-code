@@ -61,7 +61,7 @@ export const router = createBrowserRouter([
             element: <OneJobView></OneJobView>,
             loader: async ({ params }) => {
               return fetch(
-                `http://localhost:5000/alljobOneViewPost/${params.id}`
+                `https://remotely-project-server.vercel.app/alljobOneViewPost/${params.id}`
               );
             },
           },
@@ -83,7 +83,7 @@ export const router = createBrowserRouter([
         path: "/companyJob/:id",
         element: <OnepostDatails></OnepostDatails>,
         loader: async ({ params }) => {
-          return fetch(`http://localhost:5000/jobSingle/${params.id}`);
+          return fetch(`https://remotely-project-server.vercel.app/jobSingle/${params.id}`);
         },
       },
       {
@@ -91,7 +91,7 @@ export const router = createBrowserRouter([
         element: <ExploreCompany></ExploreCompany>,
         loader: async ({ params }) => {
           return fetch(
-            `http://localhost:5000/singleCompanydatails/${params.id}`
+            `https://remotely-project-server.vercel.app/singleCompanydatails/${params.id}`
           );
         },
         children: [
@@ -100,7 +100,7 @@ export const router = createBrowserRouter([
             element: <Overview></Overview>,
             loader: async ({ params }) => {
               return fetch(
-                `http://localhost:5000/singleCompanydatails/${params.id}`
+                `https://remotely-project-server.vercel.app/singleCompanydatails/${params.id}`
               );
             },
           },
@@ -108,7 +108,7 @@ export const router = createBrowserRouter([
             path: "/DainamicRoute/:id/:companyName",
             element: <Jobpost> </Jobpost>,
             loader: async ({ params }) => {
-              return fetch(`http://localhost:5000/job/${params.companyName}`);
+              return fetch(`https://remotely-project-server.vercel.app/job/${params.companyName}`);
             },
           },
         ],

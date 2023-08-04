@@ -6,7 +6,7 @@ const useEmployer = (email) => {
      
       if(email){
         useEffect(()=>{
-            fetch(`http://localhost:5000/customHooksEmployer?email=${email}`)
+            fetch(`https://remotely-project-server.vercel.app/customHooksEmployer?email=${email}`)
             .then((res)=> res.json())
             .then((data)=> {
                 console.log("employer custom hooks:", data)

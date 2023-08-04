@@ -14,7 +14,7 @@ const AlljobPost = () => {
   } = useQuery({
     queryKey: ["allPosts"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/alljob");
+      const res = await fetch("https://remotely-project-server.vercel.app/alljob");
       const data = await res.json();
       return data;
     },

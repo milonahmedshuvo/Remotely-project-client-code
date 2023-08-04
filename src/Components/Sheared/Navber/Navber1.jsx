@@ -22,7 +22,7 @@ const Navber1 = () => {
      const {data:alluserinfoOneData={}} = useQuery({
       queryKey:["alluserinfoOneData", user?.email],
       queryFn: async () => {
-        const res = await fetch(`http://localhost:5000/alluserinfoOneData?email=${user?.email}`)
+        const res = await fetch(`https://remotely-project-server.vercel.app/alluserinfoOneData?email=${user?.email}`)
         const data= await res.json()
         return data
       }

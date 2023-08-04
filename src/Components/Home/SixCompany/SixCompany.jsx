@@ -9,7 +9,7 @@ const SixCompany = () => {
       const {data:allCompanys=[], isLoading, refetch }=useQuery({
           queryKey: ['allCompanys'],
           queryFn: async () => {
-              const res = await fetch("http://localhost:5000/allCompany");
+              const res = await fetch("https://remotely-project-server.vercel.app/allCompany");
               const result = await res.json()
               return result
               

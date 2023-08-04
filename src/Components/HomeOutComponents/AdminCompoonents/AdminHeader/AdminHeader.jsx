@@ -27,7 +27,7 @@ const AdminHeader = () => {
   const {data, isLoading, refetch}=useQuery({
     queryKey: ["admin", user?.email],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/getAdminUser?email=${user?.email}`)
+      const res = await fetch(`https://remotely-project-server.vercel.app/getAdminUser?email=${user?.email}`)
       const data = await res.json()
       return data
     }

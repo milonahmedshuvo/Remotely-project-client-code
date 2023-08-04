@@ -60,7 +60,7 @@ const OneJobView = () => {
     };
     console.log(applydata);
 
-    fetch("http://localhost:5000/applyDataPost", {
+    fetch("https://remotely-project-server.vercel.app/applyDataPost", {
         method: "POST",
         headers: {
             "content-type": "application/json"

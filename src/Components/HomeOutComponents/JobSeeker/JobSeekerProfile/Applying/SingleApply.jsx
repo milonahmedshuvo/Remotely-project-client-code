@@ -6,7 +6,7 @@ const SingleApply = ({ apply,refetch }) => {
   const [ignored, forceUpdate] = useReducer(x => x + 1, 0);
   
   const handleDelete = (id) => {
-       fetch(`http://localhost:5000/applyingDelete/${id}`, {
+       fetch(`https://remotely-project-server.vercel.app/applyingDelete/${id}`, {
         method:"DELETE"
        })
        .then((res)=> res.json())

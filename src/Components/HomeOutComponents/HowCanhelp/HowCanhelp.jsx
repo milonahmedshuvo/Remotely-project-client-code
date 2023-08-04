@@ -27,7 +27,7 @@ const HowCanhelp = () => {
        const {data:jobSeeker={}} = useQuery ({
         queryKey: ['jobSeeker'],
         queryFn: async () => {
-           const res = await fetch(`http://localhost:5000/jobSeeker?email=${user?.email}`)
+           const res = await fetch(`https://remotely-project-server.vercel.app/jobSeeker?email=${user?.email}`)
            const data = await res.json()
            return data
         }
@@ -40,7 +40,7 @@ const HowCanhelp = () => {
 
 
         useEffect(()=>{
-            fetch(`http://localhost:5000/jobSeeker?email=${user?.email}`)
+            fetch(`https://remotely-project-server.vercel.app/jobSeeker?email=${user?.email}`)
             .then((res) => res.json())
             .then((data) => console.log("useEffet", data))
             .catch((err)=>console.log(err))

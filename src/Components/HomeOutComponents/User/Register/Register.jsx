@@ -81,7 +81,7 @@ const Register = () => {
   
 
   function handleSaveUserData(userData) {
-    fetch("http://localhost:5000/newUserData", {
+    fetch("https://remotely-project-server.vercel.app/newUserData", {
       method: "POST",
       headers: {
         "Content-type": "application/json",

@@ -7,7 +7,7 @@ const useAdmin = (email) => {
 
       if(email){
         useEffect(()=> {
-            fetch(`http://localhost:5000/getAdminCustomHook?email=${email}`)
+            fetch(`https://remotely-project-server.vercel.app/getAdminCustomHook?email=${email}`)
             .then((res)=> res.json())
             .then((data)=>{
                 console.log("Admin custom hook:", data)

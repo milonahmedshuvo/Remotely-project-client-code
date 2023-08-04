@@ -12,7 +12,7 @@ const FindJobs = () => {
   const { data: datas = [] } = useQuery({
     queryKey: ["datas"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/findJobLocation");
+      const res = await fetch("https://remotely-project-server.vercel.app/findJobLocation");
       const data = await res.json();
       return data;
     },
@@ -25,7 +25,7 @@ const FindJobs = () => {
     const company = event.target.company.value
     
 
-    fetch(`http://localhost:5000/jobSerchFilter?company=${company}&job=${jobTitle}`)
+    fetch(`https://remotely-project-server.vercel.app/jobSerchFilter?company=${company}&job=${jobTitle}`)
     .then((res) => res.json())
     .then((data) => {
       

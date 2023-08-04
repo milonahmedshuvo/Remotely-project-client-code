@@ -9,7 +9,7 @@ const uesJobseeker = (email) => {
       
       if(email){
         useEffect(()=>{
-            fetch(`http://localhost:5000/jobSeeker?email=${email}`)
+            fetch(`https://remotely-project-server.vercel.app/jobSeeker?email=${email}`)
             .then((res)=> res.json())
             .then((data)=>{
                 setIsJobseeker(data.isJobseeker)

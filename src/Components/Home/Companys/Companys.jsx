@@ -11,7 +11,7 @@ const Companys = () => {
   } = useQuery({
     queryKey: ["companys"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/campanyLimit");
+      const res = await fetch("https://remotely-project-server.vercel.app/campanyLimit");
       const data = await res.json();
       return data;
     },

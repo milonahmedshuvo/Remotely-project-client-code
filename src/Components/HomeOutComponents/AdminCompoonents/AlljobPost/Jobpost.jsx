@@ -6,7 +6,7 @@ const Jobpost = ({job, refetch}) => {
       const {companyName,drescription,drescriptionTwo, jobSkills,location,jobTitle,_id}= job;
  
       const handlePostDelet = (id) => {
-        fetch(`http://localhost:5000/postDelete/${id}`,{
+        fetch(`https://remotely-project-server.vercel.app/postDelete/${id}`,{
             method: "DELETE"
         })
         .then((res) => res.json())

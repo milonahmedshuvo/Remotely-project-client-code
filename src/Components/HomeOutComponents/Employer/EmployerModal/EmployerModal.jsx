@@ -25,7 +25,7 @@ const EmployerModal = ({userIdentity, email, userName}) => {
         };
         console.log(createPostData);
         
-        fetch("http://localhost:5000/employerJobPost", {
+        fetch("https://remotely-project-server.vercel.app/employerJobPost", {
           method: "POST",
           headers: {
             "content-type": "application/json",
