@@ -18,7 +18,7 @@ const FindJobs = () => {
     },
   });
 
-  
+
    
   const handleSerchData = (event) => {
     event.preventDefault()
@@ -57,17 +57,7 @@ const FindJobs = () => {
           <form 
            onSubmit={handleSerchData}
            className="flex flex-col md:flex-row mt-14 ">
-            {/* <input
-              type="text"
-              placeholder="Keyword, Title"
-              className="input input-bordered  mb-4 md:mb-0"
-            /> */}
-
-            {/* <input
-              type="text"
-              placeholder="Locations"
-              className="input input-bordered  ml-0 md:ml-2 mb-2 md:mb-0"
-            /> */}
+            
 
             <select name="company" className="select select-bordered ml-0 md:ml-2 mb-2 md:mb-0 w-full">
               <option disabled selected>
