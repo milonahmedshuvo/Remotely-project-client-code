@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React, { useEffect } from "react";
+
 import { FaPen, FaPhotoVideo } from "react-icons/fa";
 import Modal from "./Modal";
 import { useContext } from "react";

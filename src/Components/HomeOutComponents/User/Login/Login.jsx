@@ -1,11 +1,10 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React, { useContext, useEffect, useState } from "react";
+import  { useContext} from "react";
 import { createContextUser } from "../../../Sheared/Context/FullAppContext";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
-import { Link, Navigate, useNavigate} from "react-router-dom";
+import { Link, useNavigate, } from "react-router-dom";
 import Loading from "../../../Sheared/Loading";
-import { useQuery } from "@tanstack/react-query";
 import useJobseeker from "../../../Hooks/useJobseeker";
 import useEmployer from "../../../Hooks/useEmployer";
 import useAdmin from "../../../Hooks/useAdmin";
