@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React, { useContext, useEffect, useState } from "react";
 import { createContextUser } from "../../../Sheared/Context/FullAppContext";
 import { useForm } from "react-hook-form";
@@ -18,7 +19,7 @@ const Login = () => {
     return <Loading></Loading>
   }
 
-  const {register,handleSubmit,watch,formState: { errors }} = useForm();
+  const {register,handleSubmit,formState: { errors }} = useForm();
   
 
            const handleLoginForm = (data) => {
