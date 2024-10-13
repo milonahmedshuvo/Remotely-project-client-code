@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint-disable react/prop-types */
+
 
 const SingleEmployers = ({ employer }) => {
   const { title, dres, image } = employer;
@@ -11,7 +12,7 @@ const SingleEmployers = ({ employer }) => {
           <p className="text-center pb-10 text-[#303952cc]">{dres}</p>
         </div>
 
-        <div className="absolute top-[-70px] right-[100px] md:right-[10px]">
+        <div className="absolute top-[-46px]   md:top-[-70px] right-[100px] md:right-[10px]">
           <img src={image} alt="" />
         </div>
       </div>

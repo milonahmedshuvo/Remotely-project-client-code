@@ -1,4 +1,4 @@
-import React from "react";
+
 
 const Eportfolio = () => {
   return (
@@ -20,7 +20,7 @@ const Eportfolio = () => {
         </h3>
 
         <h5 className="text-[#414B5D] font-medium  mb-12 text-center md:text-start">
-          You're more than just a resume. Create a highly visible ePortfolio (or
+          You re more than just a resume. Create a highly visible ePortfolio (or
           multiple ePortfolios for multiple talent facets) that will make you
           stand out from the competition and get hired.
         </h5>
@@ -28,7 +28,7 @@ const Eportfolio = () => {
         <div className="">
           <button
             type="button"
-            className="bg-[#006AC1] py-2 px-4 rounded-3xl text-white w-1/2 md:w-2/6 ml-36 md:ml-0"
+            className="bg-[#006AC1] py-2 px-4  rounded-3xl text-white w-full md:w-2/6 md:ml-0"
           >
             Join Now
           </button>

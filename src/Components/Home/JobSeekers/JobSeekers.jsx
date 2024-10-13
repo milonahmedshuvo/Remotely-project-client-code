@@ -1,4 +1,3 @@
-import React from "react";
 import SingleJobSeekers from "./SingleJobSeekers";
 
 const JobSeekers = () => {
@@ -41,7 +40,7 @@ const JobSeekers = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 px-20 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 px-20 mt-20">
         {employers.map((employer, i) => (
           <SingleJobSeekers key={i} employer={employer}></SingleJobSeekers>
         ))}

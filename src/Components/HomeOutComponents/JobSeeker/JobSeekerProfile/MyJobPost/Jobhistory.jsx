@@ -40,7 +40,7 @@ const Jobhistory = () => {
 
       <div className="flex flex-col lg:flex-row justify-between items-center gap-4 ">
 
-        <div className="py-5 px-4 border-b w-1/3 h-[120px] rounded  flex justify-between items-center">
+        <div className="py-5 px-4 border-b w-full lg:w-1/3 h-[120px] rounded  flex justify-between items-center">
 
           <div>
             <p>Avg.Sessions</p>
@@ -52,7 +52,7 @@ const Jobhistory = () => {
           </div>
         </div>
 
-        <div className="py-5 px-4 border-b w-1/3 h-[120px] rounded flex justify-between items-center">
+        <div className="py-5 px-4 border-b w-full lg:w-1/3 h-[120px] rounded flex justify-between items-center">
 
           <div>
             <p>Apply Rate</p>
@@ -65,7 +65,7 @@ const Jobhistory = () => {
         </div>
 
 
-        <div className="py-5 px-4 border-b w-1/3 h-[120px] rounded flex justify-between items-center">
+        <div className="py-5 px-4 border-b w-full lg:w-1/3 h-[120px] rounded flex  justify-between items-center">
 
           <div>
             <p>Sessions</p>

@@ -1,6 +1,7 @@
-import React from 'react'
 import JobSeekerHeader from '../JobSeekerHeader/JobSeekerHeader'
 import { Outlet } from 'react-router-dom'
+
+
 
 
 const JobSeekerLayout = () => {

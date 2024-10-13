@@ -1,4 +1,3 @@
-import React from "react";
 import SingleEmployers from "./SingleEmployers";
 
 const Employers = () => {
@@ -31,6 +30,9 @@ const Employers = () => {
     },
   ];
 
+
+
+
   return (
     <div className="pb-20  bg-[#F0F6FA]  my-20">
       <div className=" w-full md:w-1/2 lg:w-1/3 mx-auto pb-20 pt-16">
@@ -41,7 +43,7 @@ const Employers = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 px-20 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 px-20 mt-20 ">
         {employers.map((employer, i) => (
           <SingleEmployers key={i} employer={employer}></SingleEmployers>
         ))}

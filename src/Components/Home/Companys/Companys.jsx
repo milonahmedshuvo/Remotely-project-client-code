@@ -1,13 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
-import React from "react";
 import SingleCompany from "./SingleCompany";
 import { Link } from "react-router-dom";
 
 const Companys = () => {
   const {
     data: companys = [],
-    isLoading,
-    refetch,
+  
   } = useQuery({
     queryKey: ["companys"],
     queryFn: async () => {
@@ -41,7 +39,7 @@ const Companys = () => {
         <Link to="/sixcompany">
           <button
             type="button"
-            className="bg-[#006AC1] text-white font-semibold rounded-3xl px-4 py-2 mt-8 "
+            className="bg-[#006AC1] text-white font-semibold rounded-3xl px-4 w-full  py-2 mt-8 "
           >
             Browse More Companies
           </button>

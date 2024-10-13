@@ -49,7 +49,7 @@ const JobSeekerProfile = () => {
 
         <div className="relative">
           <img
-            className="h-[100px]"
+            className="w-full h-[100px]"
             src={cover} alt="" />
 
           <div className="absolute top-16 left-28">
@@ -129,14 +129,14 @@ const JobSeekerProfile = () => {
               />
 
               <h1 className="font-medium text-lg ml-3">
-                What do you want to talk about?
+                Ary you create new job post?
               </h1>
             </div>
 
             <div>
               <label htmlFor="my_modal_6" className="">
                 <FaPen
-                  className="text-[#28A745] text-3xl"
+                  className="text-[#28A745] text-3xl hover:text-yellow-600"
                 ></FaPen>
               </label>
               <Modal

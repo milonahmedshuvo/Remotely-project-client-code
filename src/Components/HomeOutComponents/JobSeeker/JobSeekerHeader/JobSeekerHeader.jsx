@@ -1,4 +1,4 @@
-import React from "react";
+/* eslint-disable react-hooks/rules-of-hooks */
 import { Link } from "react-router-dom";
 import {
   FaUserAlt,
@@ -18,13 +18,15 @@ import { useContext } from "react";
 const JobSeekerHeader = () => {
   const {user, loading }= useContext(createContextUser)
     
+
+
   if(loading){
     return <Loading></Loading>
   }
 
 
   
-    const {data , isLoading, refetch }= useQuery({
+    const {data , isLoading,  }= useQuery({
       queryKey: ["jobSeeker", user?.email],
       queryFn: async () => {
         const res = await fetch(`https://remotely-project-server.vercel.app/userInfo?email=${user?.email}`);
@@ -38,6 +40,10 @@ const JobSeekerHeader = () => {
     }
 
     const { image } = data;
+
+
+
+
   return (
     <div className="navbar bg-[#1D4354]">
       <div className="navbar-start">
@@ -70,55 +76,60 @@ const JobSeekerHeader = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{/* { manuItem} */}</ul>
       </div>
-      <div className="navbar-end  mr-2 md:mr-5 lg:mr-24  ">
+
+      <div className="navbar-center">
         <div className="flex items-center flex-col md:flex-row">
           <Link to="/" className="">
-            <div className="flex flex-col items-center mr-3 utilitis">
+
+
+            <div className="flex flex-col items-center mr-2 utilitis">
               <p className="text-white text-xl ">
                 <FaHome></FaHome>{" "}
               </p>
-              <p className="text-white  ">Home</p>
+              <p className="text-white  text-sm">Home</p>
             </div>
           </Link>
   
 
            <Link to="/jobSeeker/employerJobpost">    
-          <div className="flex flex-col items-center  mr-3">
+          <button className="flex flex-col items-center focus:bg-[#296480]  px-3 py-1">
             <p className="text-white text-xl">
               <FaUserFriends></FaUserFriends>{" "}
             </p>
-            <p className="text-white ">Employer Post</p>
-          </div>
+            <p className="text-white text-sm ">Employer Post</p>
+          </button>
           </Link>
 
           <Link to="/jobSeeker/ddd">
-            <div className="flex flex-col items-center  mr-3">
+            <button className="flex flex-col justify-center items-center focus:bg-[#296480]  px-3 py-1">
               <p className="text-white text-xl">
                 <FaMoneyCheck></FaMoneyCheck>{" "}
               </p>
-              <p className="text-white ">My Post</p>
-            </div>
+              <p className="text-white text-sm text-center ">My Post</p>
+            </button>
           </Link>
 
          
 
         <Link to="/jobSeeker/applying">
-          <div className="flex flex-col items-center   mr-3">
+          <button className="flex flex-col items-center  focus:bg-[#296480]  px-3 py-1">
             <p className="text-white text-xl ">
               <FaIdCard></FaIdCard>{" "}
             </p>
-            <p className="text-white ">Applying </p>
-          </div>
+            <p className="text-white text-sm ">Applying </p>
+          </button>
         </Link>
 
 
-
-        <div className="flex flex-col items-center  mr-3">
+        <Link to='/jobSeeker/jobhistory' >
+        <button className="flex flex-col items-center  focus:bg-[#296480]  px-3 py-1">
             <p className="text-white text-xl">
               <FaBell></FaBell>{" "}
             </p>
-            <p className="text-white ">Notifications</p>
-          </div>
+            <p className="text-white text-sm ">Job History</p>
+          </button>
+          </Link> 
+
         </div>
 
 
