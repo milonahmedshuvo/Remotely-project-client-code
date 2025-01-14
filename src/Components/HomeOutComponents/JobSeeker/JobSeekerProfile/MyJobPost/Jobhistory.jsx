@@ -53,20 +53,15 @@ const Jobhistory = () => {
         </div>
 
         <div className="py-5 px-4 border-b w-full lg:w-1/3 h-[120px] rounded flex justify-between items-center">
-
           <div>
             <p>Apply Rate</p>
             <p className="text-2xl font-semibold my-2">36.45%</p>
           </div>
-
           <div className="text-gray-300 text-[20px]">
             <FaRandom></FaRandom>
           </div>
         </div>
-
-
         <div className="py-5 px-4 border-b w-full lg:w-1/3 h-[120px] rounded flex  justify-between items-center">
-
           <div>
             <p>Sessions</p>
             <p className="text-2xl font-semibold my-2">18K</p>
@@ -76,13 +71,7 @@ const Jobhistory = () => {
             <FaArtstation></FaArtstation>
           </div>
         </div>
-
-
-
       </div>
-
-
-
 
       {/* create chart  */}
 
@@ -91,11 +80,6 @@ const Jobhistory = () => {
           <MultipleLineCharts></MultipleLineCharts>
         </div>
       </div>
-
-
-
-
-
 
       <div className="container mx-auto p-4 mt-7">
         <h2 className="text-xl mb-4 hover:text-[#28A856]">Job Application History</h2>

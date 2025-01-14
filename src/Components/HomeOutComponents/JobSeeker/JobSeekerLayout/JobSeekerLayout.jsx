@@ -2,13 +2,11 @@ import JobSeekerHeader from '../JobSeekerHeader/JobSeekerHeader'
 import { Outlet } from 'react-router-dom'
 
 
-
-
 const JobSeekerLayout = () => {
   return (
     <div>
-        <JobSeekerHeader></JobSeekerHeader> 
-        <Outlet></Outlet>    
+      <JobSeekerHeader></JobSeekerHeader>
+      <Outlet></Outlet>
     </div>
   )
 }

@@ -92,17 +92,17 @@ const JobSeekerProfile = () => {
 
 
           <hr className=""></hr>
-          <Link to='/jobSeeker/jobhistory' >  
-          <div className="flex justify-between items-center  py-4 mx-4">
-            <div>
-              <p className="text-md font-semibold hover:text-blue-400 ">Job History</p>
+          <Link to='/jobSeeker/jobhistory' >
+            <div className="flex justify-between items-center  py-4 mx-4">
+              <div>
+                <p className="text-md font-semibold hover:text-blue-400 ">Job History</p>
+              </div>
+              <div>
+                <input
+                  className="bg-[#28A856] px-3 py-1  text-white font-bold rounded-full "
+                  type="button" value="1" />
+              </div>
             </div>
-            <div>
-              <input
-                className="bg-[#28A856] px-3 py-1  text-white font-bold rounded-full "
-                type="button" value="1" />
-            </div>
-          </div>
           </Link>
 
 
@@ -171,10 +171,6 @@ const JobSeekerProfile = () => {
 
 
           <Outlet></Outlet>
-
-
-
-
 
         </div>
       </div>

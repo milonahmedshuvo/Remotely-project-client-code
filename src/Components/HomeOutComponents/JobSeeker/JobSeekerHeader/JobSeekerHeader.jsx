@@ -16,30 +16,30 @@ import { useContext } from "react";
 
 
 const JobSeekerHeader = () => {
-  const {user, loading }= useContext(createContextUser)
-    
+  const { user, loading } = useContext(createContextUser)
 
 
-  if(loading){
+
+  if (loading) {
     return <Loading></Loading>
   }
 
 
-  
-    const {data , isLoading,  }= useQuery({
-      queryKey: ["jobSeeker", user?.email],
-      queryFn: async () => {
-        const res = await fetch(`https://remotely-project-server.vercel.app/userInfo?email=${user?.email}`);
-        const data= await res.json()
-        return data
-      }
-    })
 
-    if(isLoading){
-      return <Loading></Loading>
+  const { data, isLoading, } = useQuery({
+    queryKey: ["jobSeeker", user?.email],
+    queryFn: async () => {
+      const res = await fetch(`https://remotely-project-server.vercel.app/userInfo?email=${user?.email}`);
+      const data = await res.json()
+      return data
     }
+  })
 
-    const { image } = data;
+  if (isLoading) {
+    return <Loading></Loading>
+  }
+
+  const { image } = data;
 
 
 
@@ -89,15 +89,15 @@ const JobSeekerHeader = () => {
               <p className="text-white  text-sm">Home</p>
             </div>
           </Link>
-  
 
-           <Link to="/jobSeeker/employerJobpost">    
-          <button className="flex flex-col items-center focus:bg-[#296480]  px-3 py-1">
-            <p className="text-white text-xl">
-              <FaUserFriends></FaUserFriends>{" "}
-            </p>
-            <p className="text-white text-sm ">Employer Post</p>
-          </button>
+
+          <Link to="/jobSeeker/employerJobpost">
+            <button className="flex flex-col items-center focus:bg-[#296480]  px-3 py-1">
+              <p className="text-white text-xl">
+                <FaUserFriends></FaUserFriends>{" "}
+              </p>
+              <p className="text-white text-sm ">Employer Post</p>
+            </button>
           </Link>
 
           <Link to="/jobSeeker/ddd">
@@ -109,26 +109,26 @@ const JobSeekerHeader = () => {
             </button>
           </Link>
 
-         
-
-        <Link to="/jobSeeker/applying">
-          <button className="flex flex-col items-center  focus:bg-[#296480]  px-3 py-1">
-            <p className="text-white text-xl ">
-              <FaIdCard></FaIdCard>{" "}
-            </p>
-            <p className="text-white text-sm ">Applying </p>
-          </button>
-        </Link>
 
 
-        <Link to='/jobSeeker/jobhistory' >
-        <button className="flex flex-col items-center  focus:bg-[#296480]  px-3 py-1">
-            <p className="text-white text-xl">
-              <FaBell></FaBell>{" "}
-            </p>
-            <p className="text-white text-sm ">Job History</p>
-          </button>
-          </Link> 
+          <Link to="/jobSeeker/applying">
+            <button className="flex flex-col items-center  focus:bg-[#296480]  px-3 py-1">
+              <p className="text-white text-xl ">
+                <FaIdCard></FaIdCard>{" "}
+              </p>
+              <p className="text-white text-sm ">Applying </p>
+            </button>
+          </Link>
+
+
+          <Link to='/jobSeeker/jobhistory' >
+            <button className="flex flex-col items-center  focus:bg-[#296480]  px-3 py-1">
+              <p className="text-white text-xl">
+                <FaBell></FaBell>{" "}
+              </p>
+              <p className="text-white text-sm ">Job History</p>
+            </button>
+          </Link>
 
         </div>
 
